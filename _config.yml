@@ -1,6 +1,6 @@
 # Site
-name: 'Mundana'
-description: 'Mundana is a free Jekyll theme for awesome people like you, Medium like.'
+name: 'Carol'
+description: 'Carol is an android developer.'
 logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: 'https://carolinemusyoka.github.io/'
@@ -10,7 +10,7 @@ mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a
 
 include: ["_pages"]
 permalink: /:title/
-
+`
 # Plugins
 plugins: 
   - jekyll-feed
@@ -19,21 +19,21 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    sal:
-      name:           Sal
+    Carol:
+      name:           Carol
       site:           https://carolinemusyoka.github.io/
       avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Sal, the author of Mundana, the theme you're currently previewing. I hope you like it!"
-      email:          wowthemesnet@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+      bio:            "Hi, I am Carol, an android developer, spec in Kotlin. Sometimes I write blogs and I hope you like this. "
+      email:          carolmusyoka127@gmail.com
+      twitter:        https://twitter.com/carolmusyoka_
 
-    jane:
-      name:           Jane
-      site:           https://carolinemusyoka.github.io/
-      avatar:         /assets/images/avatar2.jpg
-      bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-      email:          fakemail@gmail.com
-      twitter:        https://twitter.com/wowthemesnet
+    # jane:
+    #   name:           Jane
+    #   site:           https://carolinemusyoka.github.io/
+    #   avatar:         /assets/images/avatar2.jpg
+    #   bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
+    #   email:          fakemail@gmail.com
+    #   twitter:        https://twitter.com/wowthemesnet
  
 # Defaults
 defaults:
@@ -43,7 +43,7 @@ defaults:
       path: "_posts"
     values:
       layout: post
-      author: sal
+      author: Carol
       avatar: /assets/images/avatar1.jpg
       
   # all pages
