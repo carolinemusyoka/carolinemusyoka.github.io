@@ -19,7 +19,7 @@ plugins:
   - jekyll-seo-tag
   
 authors:
-    Carol:
+    carol:
       name:           Carol
       site:           https://carolinemusyoka.github.io/
       avatar:         /assets/images/avatar1.jpg
