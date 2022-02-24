@@ -5,8 +5,8 @@ logo: 'assets/images/logo.png'
 favicon: 'assets/images/favicon.ico'
 baseurl: 'https://carolinemusyoka.github.io'
 disqus: 'demowebsite'
-email: 'wowthemesnet@gmail.com'
-mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
+email: 'carolmusyoka127@gmail.com'
+mailchimp-list: 'https://us10.list-manage.com/contact-form?u=e798da773f553b226a26eeb21&form_id=e616fce4e105118170b7f6e37fbe6bec'
 
 include: ["_pages"]
 permalink: /:title/
