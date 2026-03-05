@@ -1,0 +1,41 @@
+---
+title: "Articles"
+layout: default
+permalink: "/articles/"
+body_class: page-template
+---
+
+<section class="page-header">
+  <h1 class="page-title">Articles</h1>
+  <p class="page-subtitle">Stories, reflections, and explorations</p>
+</section>
+
+<div class="articles-page-grid">
+  {% for post in site.posts %}
+  <article class="article-card">
+    {% if post.image %}
+    <a href="{{ post.url | relative_url }}" class="article-card-image">
+      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
+    </a>
+    {% endif %}
+    <div class="article-card-body">
+      <div class="article-card-meta">
+        {% if post.categories.first %}
+        <span class="article-category">{{ post.categories.first }}</span>
+        {% endif %}
+        <span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
+      </div>
+      <h2 class="article-card-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      <p class="article-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+{% if site.posts.size == 0 %}
+<div style="text-align: center; padding: 4rem 2rem; color: var(--color-text-muted);">
+  <p>No articles yet. Stay tuned for stories from the road.</p>
+</div>
+{% endif %}

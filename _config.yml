@@ -1,65 +1,58 @@
-# Site
-name: 'Carol'
-description: 'Carol is an android developer.'
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/favicon.ico'
-baseurl: 'https://carolinemusyoka.github.io'
-disqus: 'carolinemusyoka-github-io'
-email: 'carolmusyoka127@gmail.com'
-mailchimp-list: 'https://us10.list-manage.com/contact-form?u=e798da773f553b226a26eeb21&form_id=e616fce4e105118170b7f6e37fbe6bec'
+# Site Settings
+title: "Carol Musyoka"
+description: "Travel, photography, and stories from around the world."
+url: "https://carolinemusyoka.github.io"
+baseurl: ""
+email: carolmusyoka127@gmail.com
+favicon: /assets/images/favicon.ico
+
+# Author
+author:
+  name: Carol Musyoka
+  bio: "Photographer, traveler, storyteller. Capturing moments and writing about the places that move me."
+  avatar: /assets/images/avatar1.jpg
+  email: carolmusyoka127@gmail.com
+  social:
+    twitter: https://twitter.com/carolmusyoka_
+    instagram: "#"
+    github: https://github.com/carolinemusyoka
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+paginate: 6
+paginate_path: "/articles/page:num/"
+
+# Collections
+collections:
+  gallery:
+    output: false
 
 include: ["_pages"]
-permalink: /:title/
 
 # Plugins
-plugins: 
+plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-paginate
   - jekyll-seo-tag
-  
-authors:
-    carol:
-      name:           Carol
-      site:           https://carolinemusyoka.github.io/
-      avatar:         /assets/images/avatar1.jpg
-      bio:            "Hi, I am Carol, an android developer, spec in Kotlin. Sometimes I write blogs and I hope you like this. "
-      email:          carolmusyoka127@gmail.com
-      twitter:        https://twitter.com/carolmusyoka_
 
-    # jane:
-    #   name:           Jane
-    #   site:           https://carolinemusyoka.github.io/
-    #   avatar:         /assets/images/avatar2.jpg
-    #   bio:            "Blogger, fashionista, love to explore new ideas and write on my morning coffee!"
-    #   email:          fakemail@gmail.com
-    #   twitter:        https://twitter.com/wowthemesnet
- 
 # Defaults
 defaults:
-
-  # all posts
   - scope:
       path: "_posts"
     values:
       layout: post
-      author: carol
-      avatar: /assets/images/avatar1.jpg
-      
-  # all pages
+      author: Carol Musyoka
   - scope:
       path: "_pages"
     values:
       layout: page
-      
-# Syntax
-markdown: kramdown
-highlighter: rouge
 
-# Paginate
-paginate: 10
-
-
-
-# Exclude metadata and development time dependencies (like Grunt plugins)
-exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+# Exclude
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md

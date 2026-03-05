@@ -1,0 +1,29 @@
+---
+title: "Gallery"
+layout: default
+permalink: "/gallery/"
+body_class: page-template
+---
+
+<section class="page-header">
+  <h1 class="page-title">Gallery</h1>
+  <p class="page-subtitle">Moments captured through the lens</p>
+</section>
+
+<div class="gallery-grid">
+  {% for i in (1..17) %}
+    {% capture img_path %}/assets/images/{{ i }}.jpg{% endcapture %}
+    <div class="gallery-item">
+      <img src="{{ img_path | relative_url }}" alt="Gallery photo {{ i }}" loading="lazy">
+      <div class="gallery-item-overlay">
+        <span class="gallery-item-caption">Photo {{ i }}</span>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" aria-label="Close">&times;</button>
+  <img id="lightbox-img" src="" alt="">
+</div>
