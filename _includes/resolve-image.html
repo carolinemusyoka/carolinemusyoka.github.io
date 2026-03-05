@@ -1,0 +1,27 @@
+{% comment %}
+  Resolves an image path to either ImageKit CDN or local URL.
+  Sets the variable "resolved_img" for use in the calling template.
+
+  Usage:
+    {% include resolve-image.html src=post.image cdn=post.image_cdn width="1200" %}
+    Then use: {{ resolved_img }}
+
+  Logic:
+    1. If src contains "://" → external URL, use as-is
+    2. If image_cdn is set AND site.imagekit_url exists → use CDN
+    3. Otherwise → use local path with relative_url
+{% endcomment %}
+
+{% assign _src = include.src %}
+{% assign _cdn = include.cdn %}
+{% assign _w = include.width | default: "1200" %}
+
+{% if _src contains "://" %}
+  {% assign resolved_img = _src %}
+{% elsif _cdn and site.imagekit_url and site.imagekit_url != "" %}
+  {% assign resolved_img = site.imagekit_url | append: "/tr:w-" | append: _w | append: ",f-auto,q-80/" | append: _cdn %}
+{% elsif _src %}
+  {% assign resolved_img = _src | relative_url %}
+{% else %}
+  {% assign resolved_img = "/assets/images/home.jpg" | relative_url %}
+{% endif %}

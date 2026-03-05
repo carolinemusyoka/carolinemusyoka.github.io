@@ -4,7 +4,16 @@ body_class: post-page
 ---
 
 <article class="post-article">
-  <div class="post-hero" {% if page.image %}style="background-image: url('{{ page.image | relative_url }}')"{% endif %}>
+  {% if page.image %}
+    {% if page.image contains "://" %}
+      {% assign hero_img = page.image %}
+    {% elsif site.imagekit_url and site.imagekit_url != "" and page.image_cdn %}
+      {% assign hero_img = site.imagekit_url | append: "/tr:w-1600,f-auto,q-80/" | append: page.image_cdn %}
+    {% else %}
+      {% assign hero_img = page.image | relative_url %}
+    {% endif %}
+  {% endif %}
+  <div class="post-hero" {% if page.image %}style="background-image: url('{{ hero_img }}')"{% endif %}>
     <div class="post-hero-overlay">
       <div class="post-hero-content">
         {% if page.categories %}
