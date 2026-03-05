@@ -108,64 +108,144 @@ title: "Carol Musyoka"
 </div>
 {% endif %}
 
-<!-- Stats / Numbers -->
-<section class="stats-bar">
-  <div class="stats-inner">
-    <div class="stat">
-      <span class="stat-number" data-target="12">0</span>
-      <span class="stat-label">Countries Visited</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <span class="stat-number" data-target="2400">0</span>
-      <span class="stat-label">Photos Taken</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <span class="stat-number" data-target="48">0</span>
-      <span class="stat-label">Stories Written</span>
-    </div>
-    <div class="stat-divider"></div>
-    <div class="stat">
-      <span class="stat-number" data-target="6">0</span>
-      <span class="stat-label">Years Exploring</span>
-    </div>
+<!-- 24 Hours In -->
+<section class="city-guides-section">
+  <div class="section-header">
+    <p class="section-label">City Guides</p>
+    <h2 class="section-title">24 Hours In</h2>
+  </div>
+  <div class="city-guides-grid">
+    <a href="/streets-of-stone-town/" class="city-card">
+      <div class="city-card-bg" style="background-image: url('/assets/images/3.jpg')"></div>
+      <div class="city-card-overlay"></div>
+      <div class="city-card-content">
+        <span class="city-card-hours">24 hrs</span>
+        <h3 class="city-card-name">Stone Town</h3>
+        <p class="city-card-country">Zanzibar, Tanzania</p>
+      </div>
+    </a>
+    <a href="#" class="city-card">
+      <div class="city-card-bg" style="background-image: url('/assets/images/7.jpg')"></div>
+      <div class="city-card-overlay"></div>
+      <div class="city-card-content">
+        <span class="city-card-hours">24 hrs</span>
+        <h3 class="city-card-name">Lamu</h3>
+        <p class="city-card-country">Lamu Island, Kenya</p>
+      </div>
+    </a>
+    <a href="#" class="city-card">
+      <div class="city-card-bg" style="background-image: url('/assets/images/10.jpg')"></div>
+      <div class="city-card-overlay"></div>
+      <div class="city-card-content">
+        <span class="city-card-hours">24 hrs</span>
+        <h3 class="city-card-name">Nairobi</h3>
+        <p class="city-card-country">Kenya</p>
+      </div>
+    </a>
+    <a href="#" class="city-card">
+      <div class="city-card-bg" style="background-image: url('/assets/images/12.jpg')"></div>
+      <div class="city-card-overlay"></div>
+      <div class="city-card-content">
+        <span class="city-card-hours">24 hrs</span>
+        <h3 class="city-card-name">Diani</h3>
+        <p class="city-card-country">Kwale, Kenya</p>
+      </div>
+    </a>
   </div>
 </section>
 
-<!-- Travel Map -->
-<section class="travel-map-section">
+<!-- Drives, Hikes & Playlists -->
+<section class="lifestyle-section">
   <div class="section-header">
-    <p class="section-label">Journeys</p>
-    <h2 class="section-title">Places I've Been</h2>
+    <p class="section-label">Beyond the Lens</p>
+    <h2 class="section-title">Drives, Hikes & Sounds</h2>
   </div>
-  <div class="travel-map-wrapper">
-    <div class="travel-map" id="travel-map">
-      <!-- SVG map gets inserted here by JS, but we also show pin list as fallback -->
+  <div class="lifestyle-grid">
+
+    <!-- Drives -->
+    <div class="lifestyle-card">
+      <div class="lifestyle-card-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17h14M5 17a2 2 0 01-2-2V8a2 2 0 012-2h2l2-3h6l2 3h2a2 2 0 012 2v7a2 2 0 01-2 2M5 17l-1 3M19 17l1 3"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="16.5" cy="17" r="1.5"/></svg>
+      </div>
+      <h3 class="lifestyle-card-title">Scenic Drives</h3>
+      <ul class="lifestyle-list">
+        <li>
+          <a href="#">
+            <strong>Nairobi → Naivasha</strong>
+            <span>The Great Rift escarpment descent</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Mombasa → Diani</strong>
+            <span>Coastal highway through palm forests</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Nanyuki → Isiolo</strong>
+            <span>Northern frontier, wide open skies</span>
+          </a>
+        </li>
+      </ul>
     </div>
-    <div class="travel-pins">
-      <a href="/chasing-light-in-the-rift-valley/" class="travel-pin">
-        <span class="travel-pin-dot"></span>
-        <div>
-          <strong>Rift Valley, Kenya</strong>
-          <span>Chasing Light in the Rift Valley</span>
-        </div>
-      </a>
-      <a href="/streets-of-stone-town/" class="travel-pin">
-        <span class="travel-pin-dot"></span>
-        <div>
-          <strong>Stone Town, Zanzibar</strong>
-          <span>The Streets of Stone Town</span>
-        </div>
-      </a>
-      <a href="/finding-quiet-in-the-mountains/" class="travel-pin">
-        <span class="travel-pin-dot"></span>
-        <div>
-          <strong>Mount Kenya Region</strong>
-          <span>Finding Quiet in the Mountains</span>
-        </div>
-      </a>
+
+    <!-- Hikes -->
+    <div class="lifestyle-card">
+      <div class="lifestyle-card-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 4L2 20h22L13 4z"/><path d="M7 20l5-8 3 4 2-2 3 6"/></svg>
+      </div>
+      <h3 class="lifestyle-card-title">Favourite Hikes</h3>
+      <ul class="lifestyle-list">
+        <li>
+          <a href="#">
+            <strong>Mt. Longonot</strong>
+            <span>Crater rim walk, 2,776m</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Karura Forest</strong>
+            <span>Urban escape in Nairobi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Ngong Hills</strong>
+            <span>Seven peaks, Karen views</span>
+          </a>
+        </li>
+      </ul>
     </div>
+
+    <!-- Playlists -->
+    <div class="lifestyle-card">
+      <div class="lifestyle-card-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+      </div>
+      <h3 class="lifestyle-card-title">Road Trip Playlists</h3>
+      <ul class="lifestyle-list">
+        <li>
+          <a href="#">
+            <strong>Golden Hour Drive</strong>
+            <span>Chill beats for sunset roads</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Coast Vibes</strong>
+            <span>Swahili coast mood</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <strong>Mountain Morning</strong>
+            <span>Acoustic & folk for early starts</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
   </div>
 </section>
 
