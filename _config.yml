@@ -52,6 +52,13 @@ defaults:
 
 imagekit_url: "https://ik.imagekit.io/ngmub3qdz"
 
+# Spotify Playlists (paste just the playlist ID from the URL)
+# e.g. for https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M → use 37i9dQZF1DXcBWIGoYBM5M
+spotify:
+  playlist_1: ""
+  playlist_2: ""
+  playlist_3: ""
+
 # Exclude
 exclude:
   - Gemfile
