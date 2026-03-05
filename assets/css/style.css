@@ -1314,6 +1314,21 @@ img {
   color: var(--color-text-muted);
 }
 
+/* Spotify Embeds */
+.spotify-embeds {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.spotify-embed iframe {
+  border-radius: 12px;
+}
+
+.lifestyle-card--playlists {
+  overflow: hidden;
+}
+
 /* --- Newsletter --- */
 .newsletter {
   border-top: 1px solid var(--color-border);
