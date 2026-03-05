@@ -12,8 +12,9 @@ title: "Carol Musyoka"
   {% endif %}
 
   {% for post in featured limit: 3 %}
+  {% include resolve-image.html src=post.image cdn=post.image_cdn width="1600" %}
   <div class="hero-slide {% if forloop.first %}active{% endif %}">
-    <div class="hero-slide-bg" style="background-image: url('{% if post.image %}{{ post.image | relative_url }}{% else %}/assets/images/home.jpg{% endif %}')"></div>
+    <div class="hero-slide-bg" style="background-image: url('{{ resolved_img }}')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-date">{{ post.date | date: "%d %B %Y" }}</p>
@@ -58,6 +59,30 @@ title: "Carol Musyoka"
   </div>
 </section>
 
+<!-- Photo of the Week -->
+<section class="potw">
+  <div class="potw-inner">
+    <div class="potw-image">
+      <img src="/assets/images/home.jpg" alt="Photo of the week">
+    </div>
+    <div class="potw-content">
+      <p class="section-label">Photo of the Week</p>
+      <h2 class="potw-title">Where the Light Falls</h2>
+      <p class="potw-text">Sometimes you wait hours for a single frame. This was one of those moments — the sun breaking through after a storm, painting the landscape in gold. Shot handheld, no filters, just patience and timing.</p>
+      <div class="potw-meta">
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Rift Valley, Kenya
+        </span>
+        <span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          March 2026
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Featured Stories -->
 {% if site.posts.size > 0 %}
 <div class="section-header">
@@ -67,8 +92,9 @@ title: "Carol Musyoka"
 
 <div class="stories-grid">
   {% for post in site.posts limit: 5 %}
+  {% include resolve-image.html src=post.image cdn=post.image_cdn width="800" %}
   <a href="{{ post.url | relative_url }}" class="story-card">
-    <div class="story-card-bg" style="background-image: url('{% if post.image %}{{ post.image | relative_url }}{% else %}/assets/images/home.jpg{% endif %}')"></div>
+    <div class="story-card-bg" style="background-image: url('{{ resolved_img }}')"></div>
     <div class="story-card-overlay"></div>
     <div class="story-card-content">
       {% if post.categories.first %}
@@ -82,15 +108,93 @@ title: "Carol Musyoka"
 </div>
 {% endif %}
 
+<!-- Stats / Numbers -->
+<section class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-number" data-target="12">0</span>
+      <span class="stat-label">Countries Visited</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number" data-target="2400">0</span>
+      <span class="stat-label">Photos Taken</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number" data-target="48">0</span>
+      <span class="stat-label">Stories Written</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-number" data-target="6">0</span>
+      <span class="stat-label">Years Exploring</span>
+    </div>
+  </div>
+</section>
+
+<!-- Travel Map -->
+<section class="travel-map-section">
+  <div class="section-header">
+    <p class="section-label">Journeys</p>
+    <h2 class="section-title">Places I've Been</h2>
+  </div>
+  <div class="travel-map-wrapper">
+    <div class="travel-map" id="travel-map">
+      <!-- SVG map gets inserted here by JS, but we also show pin list as fallback -->
+    </div>
+    <div class="travel-pins">
+      <a href="/chasing-light-in-the-rift-valley/" class="travel-pin">
+        <span class="travel-pin-dot"></span>
+        <div>
+          <strong>Rift Valley, Kenya</strong>
+          <span>Chasing Light in the Rift Valley</span>
+        </div>
+      </a>
+      <a href="/streets-of-stone-town/" class="travel-pin">
+        <span class="travel-pin-dot"></span>
+        <div>
+          <strong>Stone Town, Zanzibar</strong>
+          <span>The Streets of Stone Town</span>
+        </div>
+      </a>
+      <a href="/finding-quiet-in-the-mountains/" class="travel-pin">
+        <span class="travel-pin-dot"></span>
+        <div>
+          <strong>Mount Kenya Region</strong>
+          <span>Finding Quiet in the Mountains</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- About Teaser -->
 <section class="about-teaser">
   <div class="about-teaser-image">
-    <img src="/assets/images/avatar1.jpg" alt="{{ site.author.name }}">
+    <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-560,h-560,fo-face,f-auto,q-80/avatar.jpg" alt="{{ site.author.name }}">
   </div>
   <div>
     <p class="about-teaser-label">About Me</p>
     <h2 class="about-teaser-title">The person behind the lens</h2>
     <p class="about-teaser-text">{{ site.author.bio }}</p>
     <a href="/about/" class="btn btn-outline">Learn More</a>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="newsletter-inner">
+    <div class="newsletter-content">
+      <p class="section-label">Stay in the loop</p>
+      <h2 class="newsletter-title">Get stories delivered to your inbox</h2>
+      <p class="newsletter-text">New travel stories, photography tips, and behind-the-scenes updates. No spam, unsubscribe anytime.</p>
+    </div>
+    <form class="newsletter-form" action="{{ site.mailchimp-list }}" method="POST" target="_blank">
+      <div class="newsletter-input-group">
+        <input type="email" name="EMAIL" placeholder="your@email.com" required>
+        <button type="submit" class="btn btn-primary">Subscribe</button>
+      </div>
+    </form>
   </div>
 </section>

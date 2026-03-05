@@ -1,0 +1,40 @@
+{% comment %}
+  Responsive image helper with ImageKit CDN support.
+
+  Usage in posts/pages:
+    {% include image.html src="kenya-sunset.jpg" alt="Sunset over the Rift Valley" %}
+    {% include image.html src="zanzibar/market.jpg" alt="Market scene" width="800" %}
+
+  How it works:
+    - If site.imagekit_url is set AND the src doesn't start with "/" or "http",
+      it loads from ImageKit with auto-format, quality, and width transforms.
+    - If src starts with "/" (local path) or "http" (external URL), it uses that directly.
+    - Falls back to local /assets/images/ path if imagekit_url is not configured.
+
+  ImageKit transforms applied automatically:
+    - tr:w-{width}  → resize to width (default 1200)
+    - tr:f-auto     → serve WebP/AVIF based on browser support
+    - tr:q-80       → quality 80 (good balance of size vs quality)
+{% endcomment %}
+
+{% assign img_src = include.src %}
+{% assign img_alt = include.alt | default: "" %}
+{% assign img_width = include.width | default: "1200" %}
+{% assign img_class = include.class | default: "" %}
+{% assign img_loading = include.loading | default: "lazy" %}
+
+{% if img_src contains "://" %}
+  {% comment %} External URL — use as-is {% endcomment %}
+  {% assign full_src = img_src %}
+{% elsif img_src contains "/" %}
+  {% comment %} Local path starting with / — use as-is {% endcomment %}
+  {% assign full_src = img_src | relative_url %}
+{% elsif site.imagekit_url and site.imagekit_url != "" %}
+  {% comment %} ImageKit CDN with auto-optimization {% endcomment %}
+  {% assign full_src = site.imagekit_url | append: "/tr:w-" | append: img_width | append: ",f-auto,q-80/" | append: img_src %}
+{% else %}
+  {% comment %} Fallback to local assets {% endcomment %}
+  {% assign full_src = "/assets/images/" | append: img_src | relative_url %}
+{% endif %}
+
+<img src="{{ full_src }}" alt="{{ img_alt }}" {% if img_class != "" %}class="{{ img_class }}"{% endif %} loading="{{ img_loading }}" {% if include.width %}width="{{ include.width }}"{% endif %}>

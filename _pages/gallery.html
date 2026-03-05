@@ -10,20 +10,177 @@ body_class: page-template
   <p class="page-subtitle">Moments captured through the lens</p>
 </section>
 
-<div class="gallery-grid">
-  {% for i in (1..17) %}
-    {% capture img_path %}/assets/images/{{ i }}.jpg{% endcapture %}
-    <div class="gallery-item">
-      <img src="{{ img_path | relative_url }}" alt="Gallery photo {{ i }}" loading="lazy">
-      <div class="gallery-item-overlay">
-        <span class="gallery-item-caption">Photo {{ i }}</span>
+<!-- Category Filters -->
+<div class="gallery-filters">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="landscape">Landscapes</button>
+  <button class="filter-btn" data-filter="portrait">Portraits</button>
+  <button class="filter-btn" data-filter="street">Street</button>
+  <button class="filter-btn" data-filter="wildlife">Wildlife</button>
+</div>
+
+<!-- Masonry Gallery -->
+<div class="gallery-masonry" id="gallery-masonry">
+  <div class="gallery-item gallery-item--tall" data-category="landscape">
+    <img src="/assets/images/1.jpg" alt="Landscape photography" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">Golden hour over the valley</span>
       </div>
     </div>
-  {% endfor %}
+  </div>
+  <div class="gallery-item gallery-item--wide" data-category="street">
+    <img src="/assets/images/2.jpg" alt="Street photography" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Street</span>
+        <span class="gallery-item-caption">City life in motion</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="portrait">
+    <img src="/assets/images/3.jpg" alt="Portrait photography" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Portrait</span>
+        <span class="gallery-item-caption">Faces of the journey</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--tall" data-category="wildlife">
+    <img src="/assets/images/4.jpg" alt="Wildlife photography" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Wildlife</span>
+        <span class="gallery-item-caption">In the wild</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="landscape">
+    <img src="/assets/images/5.jpg" alt="Mountain landscape" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">Above the clouds</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--wide" data-category="landscape">
+    <img src="/assets/images/6.jpg" alt="Panoramic landscape" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">Endless horizons</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--tall" data-category="street">
+    <img src="/assets/images/7.jpg" alt="Street scene" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Street</span>
+        <span class="gallery-item-caption">Alleyways and stories</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="portrait">
+    <img src="/assets/images/8.jpg" alt="Portrait" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Portrait</span>
+        <span class="gallery-item-caption">Quiet moments</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--wide" data-category="wildlife">
+    <img src="/assets/images/9.jpg" alt="Wildlife" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Wildlife</span>
+        <span class="gallery-item-caption">Nature's grace</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="landscape">
+    <img src="/assets/images/10.jpg" alt="Landscape" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">The road ahead</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--tall" data-category="portrait">
+    <img src="/assets/images/11.jpg" alt="Portrait" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Portrait</span>
+        <span class="gallery-item-caption">Through the lens</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="street">
+    <img src="/assets/images/12.jpg" alt="Street" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Street</span>
+        <span class="gallery-item-caption">Market day</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--wide" data-category="landscape">
+    <img src="/assets/images/13.jpg" alt="Landscape" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">Where sky meets earth</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="wildlife">
+    <img src="/assets/images/14.jpg" alt="Wildlife" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Wildlife</span>
+        <span class="gallery-item-caption">Patient observer</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--tall" data-category="landscape">
+    <img src="/assets/images/15.jpg" alt="Landscape" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Landscape</span>
+        <span class="gallery-item-caption">Vertical world</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item" data-category="street">
+    <img src="/assets/images/16.jpg" alt="Street" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Street</span>
+        <span class="gallery-item-caption">Evening glow</span>
+      </div>
+    </div>
+  </div>
+  <div class="gallery-item gallery-item--wide" data-category="portrait">
+    <img src="/assets/images/17.jpg" alt="Portrait" loading="lazy">
+    <div class="gallery-item-overlay">
+      <div class="gallery-item-info">
+        <span class="gallery-item-tag">Portrait</span>
+        <span class="gallery-item-caption">A story in every face</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">
   <button class="lightbox-close" aria-label="Close">&times;</button>
+  <button class="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+  <button class="lightbox-next" aria-label="Next">&rsaquo;</button>
   <img id="lightbox-img" src="" alt="">
+  <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>

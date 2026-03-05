@@ -12,25 +12,18 @@ body_class: page-template
 
 <div class="articles-page-grid">
   {% for post in site.posts %}
-  <article class="article-card">
-    {% if post.image %}
-    <a href="{{ post.url | relative_url }}" class="article-card-image">
-      <img src="{{ post.image | relative_url }}" alt="{{ post.title }}" loading="lazy">
-    </a>
-    {% endif %}
-    <div class="article-card-body">
-      <div class="article-card-meta">
-        {% if post.categories.first %}
-        <span class="article-category">{{ post.categories.first }}</span>
-        {% endif %}
-        <span class="article-date">{{ post.date | date: "%B %d, %Y" }}</span>
-      </div>
-      <h2 class="article-card-title">
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </h2>
-      <p class="article-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+  {% include resolve-image.html src=post.image cdn=post.image_cdn width="800" %}
+  <a href="{{ post.url | relative_url }}" class="story-card story-card--article">
+    <div class="story-card-bg" style="background-image: url('{{ resolved_img }}')"></div>
+    <div class="story-card-overlay"></div>
+    <div class="story-card-content">
+      {% if post.categories.first %}
+      <p class="story-card-category">{{ post.categories.first }}</p>
+      {% endif %}
+      <h3 class="story-card-title">{{ post.title }}</h3>
+      <p class="story-card-date">{{ post.date | date: "%B %d, %Y" }}</p>
     </div>
-  </article>
+  </a>
   {% endfor %}
 </div>
 

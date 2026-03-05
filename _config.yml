@@ -10,7 +10,7 @@ favicon: /assets/images/favicon.ico
 author:
   name: Carol Musyoka
   bio: "Photographer, traveler, storyteller. Capturing moments and writing about the places that move me."
-  avatar: /assets/images/avatar1.jpg
+  avatar: https://ik.imagekit.io/ngmub3qdz/tr:w-560,h-560,fo-face,f-auto,q-80/avatar.jpg
   email: carolmusyoka127@gmail.com
   social:
     twitter: https://twitter.com/carolmusyoka_
@@ -49,6 +49,8 @@ defaults:
       path: "_pages"
     values:
       layout: page
+
+imagekit_url: "https://ik.imagekit.io/ngmub3qdz"
 
 # Exclude
 exclude:
