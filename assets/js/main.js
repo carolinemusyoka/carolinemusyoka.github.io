@@ -183,12 +183,40 @@ document.addEventListener('DOMContentLoaded', () => {
     statNumbers.forEach(el => statsObserver.observe(el));
   }
 
+  // --- Stop category filters (scenic drive pages) ---
+  const stopFilterBtns = document.querySelectorAll('.stop-filter-btn');
+  const stopCards = document.querySelectorAll('.stop-card');
+
+  if (stopFilterBtns.length && stopCards.length) {
+    stopFilterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const category = btn.dataset.stop;
+
+        stopFilterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        stopCards.forEach(card => {
+          if (category === 'all' || card.dataset.stopCategory === category) {
+            card.classList.remove('hidden');
+          } else {
+            card.classList.add('hidden');
+          }
+        });
+      });
+    });
+  }
+
   // --- Intersection Observer for fade-in animations ---
-  const animateElements = document.querySelectorAll('.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner');
+  const animateElements = document.querySelectorAll(
+    '.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner, ' +
+    '.viewpoint-card, .stop-card, .city-activity-card, .accommodation-card, .tip-item, ' +
+    '.drive-overview, .drive-section, .guide-time-block, .practical-grid, .practical-item'
+  );
   if (animateElements.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
           entry.target.style.opacity = '1';
           entry.target.style.transform = 'translateY(0)';
           observer.unobserve(entry.target);

@@ -30,7 +30,7 @@ title: "Carol Musyoka"
 
   {% if featured.size == 0 %}
   <div class="hero-slide active">
-    <div class="hero-slide-bg" style="background-image: url('/assets/images/home.jpg')"></div>
+    <div class="hero-slide-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-1600,h-900,f-auto,q-80/blog/default-hero.jpg')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-date">Welcome</p>
@@ -63,7 +63,7 @@ title: "Carol Musyoka"
 <section class="potw">
   <div class="potw-inner">
     <div class="potw-image">
-      <img src="/assets/images/home.jpg" alt="Photo of the week">
+      <img src="{{ site.imagekit_url }}/tr:w-1200,h-800,f-auto,q-80/potw/current.jpg" alt="Photo of the week">
     </div>
     <div class="potw-content">
       <p class="section-label">Photo of the Week</p>
@@ -115,8 +115,8 @@ title: "Carol Musyoka"
     <h2 class="section-title">24 Hours In</h2>
   </div>
   <div class="city-guides-grid">
-    <a href="/streets-of-stone-town/" class="city-card">
-      <div class="city-card-bg" style="background-image: url('/assets/images/3.jpg')"></div>
+    <a href="/24-hours-in-stone-town/" class="city-card">
+      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/stone-town.jpg')"></div>
       <div class="city-card-overlay"></div>
       <div class="city-card-content">
         <span class="city-card-hours">24 hrs</span>
@@ -125,7 +125,7 @@ title: "Carol Musyoka"
       </div>
     </a>
     <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('/assets/images/7.jpg')"></div>
+      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/lamu.jpg')"></div>
       <div class="city-card-overlay"></div>
       <div class="city-card-content">
         <span class="city-card-hours">24 hrs</span>
@@ -134,7 +134,7 @@ title: "Carol Musyoka"
       </div>
     </a>
     <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('/assets/images/10.jpg')"></div>
+      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/nairobi.jpg')"></div>
       <div class="city-card-overlay"></div>
       <div class="city-card-content">
         <span class="city-card-hours">24 hrs</span>
@@ -143,7 +143,7 @@ title: "Carol Musyoka"
       </div>
     </a>
     <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('/assets/images/12.jpg')"></div>
+      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/diani.jpg')"></div>
       <div class="city-card-overlay"></div>
       <div class="city-card-content">
         <span class="city-card-hours">24 hrs</span>
@@ -170,7 +170,7 @@ title: "Carol Musyoka"
       <h3 class="lifestyle-card-title">Scenic Drives</h3>
       <ul class="lifestyle-list">
         <li>
-          <a href="#">
+          <a href="/nairobi-to-naivasha/">
             <strong>Nairobi → Naivasha</strong>
             <span>The Great Rift escarpment descent</span>
           </a>

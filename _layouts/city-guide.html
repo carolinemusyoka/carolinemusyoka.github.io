@@ -1,0 +1,299 @@
+---
+layout: default
+body_class: city-guide-page
+---
+
+{% comment %} Resolve hero image {% endcomment %}
+{% if page.image_cdn and site.imagekit_url %}
+  {% assign hero_img = site.imagekit_url | append: "/tr:w-1600,f-auto,q-80/" | append: page.image_cdn %}
+{% elsif page.image %}
+  {% assign hero_img = page.image | relative_url %}
+{% endif %}
+
+<article class="city-guide-article">
+
+  <!-- City Hero -->
+  <div class="guide-hero" {% if hero_img %}style="background-image: url('{{ hero_img }}')"{% endif %}>
+    <div class="guide-hero-overlay"></div>
+    <div class="guide-hero-content">
+      <span class="guide-badge">24 Hours In</span>
+      <h1 class="guide-city-name">{{ page.city.name }}</h1>
+      <p class="guide-country">{{ page.city.country }}</p>
+    </div>
+  </div>
+
+  <!-- Quick Info Bar -->
+  {% if page.city %}
+  <div class="guide-quick-info">
+    {% if page.city.timezone %}
+    <div class="quick-info-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>{{ page.city.timezone }}</span>
+    </div>
+    {% endif %}
+    {% if page.city.currency %}
+    <div class="quick-info-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      <span>{{ page.city.currency }}</span>
+    </div>
+    {% endif %}
+    {% if page.practical.budget_per_day %}
+    <div class="quick-info-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+      <span>{{ page.practical.budget_per_day }}/day</span>
+    </div>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  <!-- Post intro content -->
+  {% if content != "" %}
+  <div class="guide-intro">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <!-- Timeline -->
+  <div class="guide-timeline">
+
+    {% comment %} ── Morning ── {% endcomment %}
+    {% if page.morning.size > 0 %}
+    <section class="guide-time-block">
+      <div class="time-block-header">
+        <div class="time-block-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        </div>
+        <div>
+          <h2 class="time-block-title">Morning</h2>
+          <span class="time-block-range">7:00 AM – 12:00 PM</span>
+        </div>
+      </div>
+      <div class="time-block-activities">
+        {% for item in page.morning %}
+        <div class="city-activity-card">
+          {% if item.image_cdn %}
+          <div class="activity-image">
+            <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="activity-content">
+            <span class="activity-time">{{ item.time }}</span>
+            <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
+            <p class="activity-desc">{{ item.description }}</p>
+            {% if item.type %}
+            <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% comment %} ── Midday ── {% endcomment %}
+    {% if page.midday.size > 0 %}
+    <section class="guide-time-block">
+      <div class="time-block-header">
+        <div class="time-block-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+        </div>
+        <div>
+          <h2 class="time-block-title">Midday</h2>
+          <span class="time-block-range">12:00 PM – 3:00 PM</span>
+        </div>
+      </div>
+      <div class="time-block-activities">
+        {% for item in page.midday %}
+        <div class="city-activity-card">
+          {% if item.image_cdn %}
+          <div class="activity-image">
+            <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="activity-content">
+            <span class="activity-time">{{ item.time }}</span>
+            <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
+            <p class="activity-desc">{{ item.description }}</p>
+            {% if item.type %}
+            <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% comment %} ── Afternoon ── {% endcomment %}
+    {% if page.afternoon.size > 0 %}
+    <section class="guide-time-block">
+      <div class="time-block-header">
+        <div class="time-block-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 18a5 5 0 00-10 0"/><line x1="12" y1="9" x2="12" y2="2"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/></svg>
+        </div>
+        <div>
+          <h2 class="time-block-title">Afternoon</h2>
+          <span class="time-block-range">3:00 PM – 6:00 PM</span>
+        </div>
+      </div>
+      <div class="time-block-activities">
+        {% for item in page.afternoon %}
+        <div class="city-activity-card">
+          {% if item.image_cdn %}
+          <div class="activity-image">
+            <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="activity-content">
+            <span class="activity-time">{{ item.time }}</span>
+            <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
+            <p class="activity-desc">{{ item.description }}</p>
+            {% if item.type %}
+            <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    {% comment %} ── Evening ── {% endcomment %}
+    {% if page.evening.size > 0 %}
+    <section class="guide-time-block">
+      <div class="time-block-header">
+        <div class="time-block-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </div>
+        <div>
+          <h2 class="time-block-title">Evening</h2>
+          <span class="time-block-range">6:00 PM onwards</span>
+        </div>
+      </div>
+      <div class="time-block-activities">
+        {% for item in page.evening %}
+        <div class="city-activity-card">
+          {% if item.image_cdn %}
+          <div class="activity-image">
+            <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
+          </div>
+          {% endif %}
+          <div class="activity-content">
+            <span class="activity-time">{{ item.time }}</span>
+            <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
+            <p class="activity-desc">{{ item.description }}</p>
+            {% if item.type %}
+            <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+  </div>
+
+  <!-- Where to Stay -->
+  {% if page.accommodations.size > 0 %}
+  <section class="guide-section">
+    <div class="section-header">
+      <p class="section-label">Rest Up</p>
+      <h2 class="section-title">Where to Stay</h2>
+    </div>
+    <div class="accommodations-grid">
+      {% for place in page.accommodations %}
+      <div class="accommodation-card">
+        <div class="accommodation-header">
+          <h3 class="accommodation-name">{{ place.name }}</h3>
+          <span class="accommodation-price">{{ place.price_range }}</span>
+        </div>
+        <span class="accommodation-type">{{ place.type }}</span>
+        <p class="accommodation-desc">{{ place.description }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Practical Info -->
+  {% if page.practical %}
+  <section class="guide-section guide-practical">
+    <div class="section-header">
+      <p class="section-label">Good to Know</p>
+      <h2 class="section-title">Practical Info</h2>
+    </div>
+    <div class="practical-grid">
+      {% if page.practical.best_time %}
+      <div class="practical-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2"/></svg>
+        <span class="practical-label">Best Time to Visit</span>
+        <span class="practical-value">{{ page.practical.best_time }}</span>
+      </div>
+      {% endif %}
+      {% if page.practical.getting_around %}
+      <div class="practical-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8l4 4-4 4M8 12h8"/></svg>
+        <span class="practical-label">Getting Around</span>
+        <span class="practical-value">{{ page.practical.getting_around }}</span>
+      </div>
+      {% endif %}
+      {% if page.practical.budget_per_day %}
+      <div class="practical-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        <span class="practical-label">Budget per Day</span>
+        <span class="practical-value">{{ page.practical.budget_per_day }}</span>
+      </div>
+      {% endif %}
+      {% if page.practical.language %}
+      <div class="practical-item">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 8l6 6M4 14l6-6 2-3M2 5h12M7 2h1"/><path d="M22 22l-5-10-5 10M14 18h6"/></svg>
+        <span class="practical-label">Language</span>
+        <span class="practical-value">{{ page.practical.language }}</span>
+      </div>
+      {% endif %}
+    </div>
+
+    {% if page.practical.tips.size > 0 %}
+    <div class="guide-tips-list">
+      <h3>Local Tips</h3>
+      {% for tip in page.practical.tips %}
+      <div class="tip-item">
+        <div class="tip-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p>{{ tip }}</p>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+  </section>
+  {% endif %}
+
+  <!-- Tags + Navigation -->
+  <div class="post-content-wrapper">
+    {% if page.tags.size > 0 %}
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <span class="tag">#{{ tag }}</span>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <nav class="post-navigation">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+        <span class="post-nav-label">&larr; Previous</span>
+        <span class="post-nav-title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+        <span class="post-nav-label">Next &rarr;</span>
+        <span class="post-nav-title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+  </div>
+
+</article>

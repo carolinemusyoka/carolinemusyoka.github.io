@@ -23,5 +23,9 @@
 {% elsif _src %}
   {% assign resolved_img = _src | relative_url %}
 {% else %}
-  {% assign resolved_img = "/assets/images/home.jpg" | relative_url %}
+  {% if site.imagekit_url %}
+    {% assign resolved_img = site.imagekit_url | append: "/tr:w-1200,f-auto,q-80/blog/default-hero.jpg" %}
+  {% else %}
+    {% assign resolved_img = "/assets/images/home.jpg" | relative_url %}
+  {% endif %}
 {% endif %}

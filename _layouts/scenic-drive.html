@@ -1,0 +1,210 @@
+---
+layout: default
+body_class: drive-page
+---
+
+{% comment %} Resolve hero image {% endcomment %}
+{% if page.image_cdn and site.imagekit_url %}
+  {% assign hero_img = site.imagekit_url | append: "/tr:w-1600,f-auto,q-80/" | append: page.image_cdn %}
+{% elsif page.image %}
+  {% assign hero_img = page.image | relative_url %}
+{% endif %}
+
+<article class="scenic-drive-article">
+
+  <!-- Route Hero -->
+  <div class="drive-hero" {% if hero_img %}style="background-image: url('{{ hero_img }}')"{% endif %}>
+    <div class="drive-hero-overlay"></div>
+    <div class="drive-hero-content">
+      {% if page.route %}
+      <div class="drive-route-badge">
+        <span class="route-point">{{ page.route.start }}</span>
+        <svg class="route-arrow" width="32" height="16" viewBox="0 0 32 16" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M0 8h28M22 2l6 6-6 6"/>
+        </svg>
+        <span class="route-point">{{ page.route.end }}</span>
+      </div>
+      {% endif %}
+      <h1 class="drive-title">{{ page.title }}</h1>
+      <div class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+        {% if page.location %}
+        <span class="post-location">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          {{ page.location }}
+        </span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Route Overview -->
+  {% if page.route %}
+  <section class="drive-overview">
+    <div class="drive-overview-grid">
+      <div class="drive-stat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="drive-stat-value">{{ page.route.distance_km }} km</span>
+        <span class="drive-stat-label">Total Distance</span>
+      </div>
+      <div class="drive-stat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span class="drive-stat-value">{{ page.route.estimated_hours }} hrs</span>
+        <span class="drive-stat-label">Drive Time</span>
+      </div>
+      <div class="drive-stat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span class="drive-stat-value">{{ page.route.difficulty }}</span>
+        <span class="drive-stat-label">Difficulty</span>
+      </div>
+      <div class="drive-stat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+        <span class="drive-stat-value">{{ page.route.best_season }}</span>
+        <span class="drive-stat-label">Best Season</span>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Route Map -->
+  {% if page.route.map_embed %}
+  <section class="drive-map">
+    <div class="section-header">
+      <p class="section-label">The Route</p>
+      <h2 class="section-title">Your Road Map</h2>
+    </div>
+    <div class="drive-map-embed">
+      {{ page.route.map_embed }}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Post intro content -->
+  {% if content != "" %}
+  <div class="drive-body">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  <!-- Viewpoints -->
+  {% if page.viewpoints.size > 0 %}
+  <section class="drive-section">
+    <div class="section-header">
+      <p class="section-label">Along the Way</p>
+      <h2 class="section-title">Scenic Viewpoints</h2>
+    </div>
+    <div class="viewpoints-grid">
+      {% for point in page.viewpoints %}
+      <div class="viewpoint-card">
+        {% if point.image_cdn %}
+        <div class="viewpoint-image">
+          <img src="{{ site.imagekit_url }}/tr:w-700,f-auto,q-80/{{ point.image_cdn }}" alt="{{ point.name }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="viewpoint-content">
+          <h3 class="viewpoint-name">{{ point.name }}</h3>
+          <p class="viewpoint-desc">{{ point.description }}</p>
+          {% if point.km_marker %}
+          <span class="viewpoint-marker">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            KM {{ point.km_marker }}
+          </span>
+          {% endif %}
+          {% if point.elevation_m %}
+          <span class="viewpoint-elevation">↑ {{ point.elevation_m }}m</span>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Stops -->
+  {% if page.stops.size > 0 %}
+  <section class="drive-section">
+    <div class="section-header">
+      <p class="section-label">Pit Stops</p>
+      <h2 class="section-title">Where to Stop</h2>
+    </div>
+    <div class="stops-filter">
+      <button class="stop-filter-btn active" data-stop="all">All</button>
+      <button class="stop-filter-btn" data-stop="fuel">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V6a2 2 0 012-2h8a2 2 0 012 2v16"/><path d="M15 10h2a2 2 0 012 2v2a2 2 0 002 2h0"/><path d="M3 22h12"/><rect x="6" y="8" width="6" height="4"/></svg>
+        Fuel
+      </button>
+      <button class="stop-filter-btn" data-stop="food">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        Food
+      </button>
+      <button class="stop-filter-btn" data-stop="parking">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 17V7h4a3 3 0 010 6H9"/></svg>
+        Parking
+      </button>
+    </div>
+    <div class="stops-grid">
+      {% for stop in page.stops %}
+      <div class="stop-card" data-stop-category="{{ stop.category }}">
+        {% if stop.image_cdn %}
+        <div class="stop-image">
+          <img src="{{ site.imagekit_url }}/tr:w-500,h-350,f-auto,q-80/{{ stop.image_cdn }}" alt="{{ stop.name }}" loading="lazy">
+        </div>
+        {% endif %}
+        <div class="stop-content">
+          <span class="stop-category-badge stop-{{ stop.category }}">{{ stop.category | capitalize }}</span>
+          <h4 class="stop-name">{{ stop.name }}</h4>
+          <p class="stop-desc">{{ stop.description }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Tips -->
+  {% if page.tips.size > 0 %}
+  <section class="drive-section drive-tips-section">
+    <div class="section-header">
+      <p class="section-label">Before You Go</p>
+      <h2 class="section-title">Driving Tips</h2>
+    </div>
+    <div class="drive-tips-list">
+      {% for tip in page.tips %}
+      <div class="tip-item">
+        <div class="tip-icon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <p>{{ tip }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+  <!-- Tags -->
+  {% if page.tags.size > 0 %}
+  <div class="post-content-wrapper">
+    <div class="post-tags">
+      {% for tag in page.tags %}
+      <span class="tag">#{{ tag }}</span>
+      {% endfor %}
+    </div>
+
+    <nav class="post-navigation">
+      {% if page.previous %}
+      <a href="{{ page.previous.url | relative_url }}" class="post-nav-link prev">
+        <span class="post-nav-label">&larr; Previous</span>
+        <span class="post-nav-title">{{ page.previous.title }}</span>
+      </a>
+      {% endif %}
+      {% if page.next %}
+      <a href="{{ page.next.url | relative_url }}" class="post-nav-link next">
+        <span class="post-nav-label">Next &rarr;</span>
+        <span class="post-nav-title">{{ page.next.title }}</span>
+      </a>
+      {% endif %}
+    </nav>
+  </div>
+  {% endif %}
+
+</article>
