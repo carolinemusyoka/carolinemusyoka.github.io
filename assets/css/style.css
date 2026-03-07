@@ -1836,3 +1836,916 @@ img {
   color: var(--color-text-muted);
   text-align: center;
 }
+
+/* ======================================
+   Scenic Drive Layout
+   ====================================== */
+
+.drive-hero {
+  position: relative;
+  height: 75vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+.drive-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.4) 40%, transparent 70%);
+}
+
+.drive-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  width: 100%;
+}
+
+.drive-route-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(201, 169, 110, 0.15);
+  border: 1px solid var(--color-accent);
+  border-radius: 100px;
+  padding: 0.6rem 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.route-point {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-accent);
+}
+
+.route-arrow {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.drive-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+/* Drive Overview Stats */
+.drive-overview {
+  max-width: var(--max-width);
+  margin: -3rem auto 4rem;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.drive-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.drive-stat {
+  background: var(--color-bg-card);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.drive-stat svg {
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.drive-stat-value {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.drive-stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+/* Drive Map */
+.drive-map {
+  max-width: var(--max-width);
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+}
+
+.drive-map-embed {
+  border-radius: 12px;
+  overflow: hidden;
+  aspect-ratio: 16 / 7;
+  background: var(--color-bg-card);
+}
+
+.drive-map-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Drive Body (intro text) */
+.drive-body {
+  max-width: var(--content-width);
+  margin: 0 auto 4rem;
+  padding: 0 2rem;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+.drive-body p {
+  margin-bottom: 1.5rem;
+}
+
+/* Drive Sections */
+.drive-section {
+  max-width: var(--max-width);
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+/* Viewpoints */
+.viewpoints-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.viewpoint-card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), border-color var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.viewpoint-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.viewpoint-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-accent);
+}
+
+.viewpoint-image {
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+
+.viewpoint-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.viewpoint-card:hover .viewpoint-image img {
+  transform: scale(1.05);
+}
+
+.viewpoint-content {
+  padding: 1.5rem;
+}
+
+.viewpoint-name {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.viewpoint-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.viewpoint-marker,
+.viewpoint-elevation {
+  font-size: 0.75rem;
+  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-right: 1rem;
+}
+
+/* Stops */
+.stops-filter {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.stop-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.2rem;
+  border: 1px solid var(--color-border);
+  border-radius: 100px;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.stop-filter-btn:hover,
+.stop-filter-btn.active {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  background: rgba(201, 169, 110, 0.08);
+}
+
+.stops-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.stop-card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), border-color var(--transition), opacity 0.3s;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stop-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stop-card.hidden {
+  display: none;
+}
+
+.stop-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+}
+
+.stop-image {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+
+.stop-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stop-content {
+  padding: 1.25rem;
+}
+
+.stop-category-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  margin-bottom: 0.75rem;
+}
+
+.stop-fuel {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.stop-food {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.stop-parking {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+}
+
+.stop-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 0.4rem;
+}
+
+.stop-desc {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* Tips */
+.drive-tips-section {
+  max-width: var(--content-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.drive-tips-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.tip-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--color-bg-card);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity 0.4s, transform 0.4s;
+}
+
+.tip-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.tip-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(201, 169, 110, 0.12);
+  color: var(--color-accent);
+}
+
+.tip-item p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+/* ======================================
+   City Guide Layout
+   ====================================== */
+
+.guide-hero {
+  position: relative;
+  height: 80vh;
+  min-height: 550px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.guide-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(10,10,10,0.5) 0%, rgba(10,10,10,0.85) 100%);
+}
+
+.guide-hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+}
+
+.guide-badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  padding: 0.5rem 1.5rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.guide-city-name {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 700;
+  color: var(--color-white);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+}
+
+.guide-country {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* Quick Info Bar */
+.guide-quick-info {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.5rem 2rem;
+  background: var(--color-bg-card);
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap;
+}
+
+.quick-info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.quick-info-item svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+/* Guide Intro */
+.guide-intro {
+  max-width: var(--content-width);
+  margin: 3rem auto;
+  padding: 0 2rem;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--color-text);
+}
+
+.guide-intro p {
+  margin-bottom: 1.5rem;
+}
+
+/* Timeline */
+.guide-timeline {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.guide-timeline::before {
+  content: '';
+  position: absolute;
+  left: calc(2rem + 18px);
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--color-accent), var(--color-border));
+}
+
+/* Time Blocks */
+.guide-time-block {
+  margin-bottom: 4rem;
+  padding-left: 60px;
+  position: relative;
+}
+
+.time-block-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.time-block-icon {
+  position: absolute;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-bg);
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+  z-index: 1;
+}
+
+.time-block-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.time-block-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-white);
+}
+
+.time-block-range {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Activity Cards */
+.time-block-activities {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.city-activity-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  transition: transform var(--transition), border-color var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.city-activity-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.city-activity-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-accent);
+}
+
+.activity-image {
+  overflow: hidden;
+}
+
+.activity-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 200px;
+  transition: transform 0.6s ease;
+}
+
+.city-activity-card:hover .activity-image img {
+  transform: scale(1.05);
+}
+
+.activity-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.activity-time {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.activity-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 0.5rem;
+}
+
+.activity-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  margin-bottom: 0.75rem;
+}
+
+.activity-type {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+.activity-type--breakfast,
+.activity-type--lunch,
+.activity-type--dinner,
+.activity-type--food {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+}
+
+.activity-type--activity {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+.activity-type--coffee {
+  background: rgba(168, 85, 247, 0.15);
+  color: #c084fc;
+}
+
+/* Guide Sections */
+.guide-section {
+  max-width: var(--max-width);
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+/* Accommodations */
+.accommodations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.accommodation-card {
+  background: var(--color-bg-card);
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition);
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.accommodation-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.accommodation-card:hover {
+  border-color: var(--color-accent);
+}
+
+.accommodation-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.accommodation-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+.accommodation-price {
+  font-size: 1rem;
+  color: var(--color-accent);
+  font-weight: 600;
+}
+
+.accommodation-type {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.accommodation-desc {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  line-height: 1.6;
+}
+
+/* Practical Info */
+.practical-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.practical-item {
+  background: var(--color-bg-card);
+  border-radius: 8px;
+  padding: 1.5rem;
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.practical-item svg {
+  color: var(--color-accent);
+  margin-bottom: 0.25rem;
+}
+
+.practical-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted);
+}
+
+.practical-value {
+  font-size: 0.95rem;
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.guide-tips-list {
+  margin-top: 2.5rem;
+}
+
+.guide-tips-list h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+}
+
+/* ======================================
+   Responsive — Drive & Guide
+   ====================================== */
+
+@media (max-width: 992px) {
+  .drive-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .viewpoints-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .city-activity-card {
+    grid-template-columns: 220px 1fr;
+  }
+
+  .guide-timeline::before {
+    left: calc(2rem + 18px);
+  }
+}
+
+@media (max-width: 768px) {
+  .drive-hero {
+    height: 60vh;
+    min-height: 400px;
+  }
+
+  .drive-hero-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .drive-route-badge {
+    padding: 0.4rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .route-point {
+    font-size: 0.75rem;
+  }
+
+  .drive-overview {
+    margin-top: -2rem;
+  }
+
+  .drive-overview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .city-activity-card {
+    grid-template-columns: 1fr;
+  }
+
+  .activity-image {
+    aspect-ratio: 16 / 9;
+  }
+
+  .guide-hero {
+    height: 65vh;
+  }
+
+  .guide-city-name {
+    font-size: clamp(2.5rem, 10vw, 4rem);
+  }
+
+  .guide-quick-info {
+    gap: 1.5rem;
+  }
+
+  .guide-timeline::before {
+    left: calc(1.5rem + 18px);
+  }
+
+  .guide-time-block {
+    padding-left: 50px;
+  }
+
+  .guide-timeline {
+    padding: 0 1.5rem;
+  }
+
+  .accommodations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .practical-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .drive-overview-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .drive-stat {
+    padding: 1.25rem 1rem;
+  }
+
+  .drive-stat-value {
+    font-size: 1.1rem;
+  }
+
+  .guide-quick-info {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .guide-timeline::before {
+    display: none;
+  }
+
+  .guide-time-block {
+    padding-left: 0;
+  }
+
+  .time-block-icon {
+    position: relative;
+    left: auto;
+  }
+
+  .stops-filter {
+    gap: 0.5rem;
+  }
+
+  .stop-filter-btn {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
