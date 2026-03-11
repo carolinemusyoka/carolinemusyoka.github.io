@@ -206,11 +206,29 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- 24 Hours In city tab switching ---
+  const cityTabs = document.querySelectorAll('.day-city-tab');
+  const cityPanels = document.querySelectorAll('.day-guide-content');
+
+  if (cityTabs.length && cityPanels.length) {
+    cityTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const city = tab.dataset.city;
+        cityTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        cityPanels.forEach(p => {
+          p.classList.toggle('active', p.dataset.city === city);
+        });
+      });
+    });
+  }
+
   // --- Intersection Observer for fade-in animations ---
   const animateElements = document.querySelectorAll(
     '.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner, ' +
     '.viewpoint-card, .stop-card, .city-activity-card, .accommodation-card, .tip-item, ' +
-    '.drive-overview, .drive-section, .guide-time-block, .practical-grid, .practical-item'
+    '.drive-overview, .drive-section, .guide-time-block, .practical-grid, .practical-item, ' +
+    '.day-block, .day-spot, .day-stay'
   );
   if (animateElements.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
