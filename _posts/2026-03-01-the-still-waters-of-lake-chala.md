@@ -17,13 +17,25 @@ I came here on a detour from Taveta, following a dirt road that didn't inspire m
 
 What makes Chala special isn't just the colour — it's the stillness. No boats (usually), no crowds, no noise. Just water and rock and sky. The lake is fed by underground streams from Mount Kilimanjaro, which looms in the background on clear days. You can see the snow-capped peak from the eastern rim if the clouds cooperate.
 
-![The turquoise waters of Lake Chala from the crater rim](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/lake_chala_boat.jpg)
+<div class="portrait-pair">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/lake-chala-rim.jpg" alt="The crater rim of Lake Chala">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/lake-chala-water.jpg" alt="Turquoise waters of Lake Chala">
+</div>
 
 ## Getting Down to the Water
 
 There's a steep trail from the rim down to the water's edge. It takes about twenty minutes and it's not for the faint-hearted — loose rocks, thorny bushes, and a gradient that makes your knees complain on the way back up. But at the bottom, you can swim in water so clear you can see the rocks ten metres below.
 
-![The Rift Valley escarpment — the kind of landscape that surrounds this region](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/rift_valley_escarpment.jpg)
+<figure class="portrait-single">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/lake-chala-trail.jpg" alt="The steep trail down to Lake Chala">
+</figure>
+
+The locals will tell you there are crocodiles in the lake. Whether that's true or legend depends on who you ask. I swam anyway. The water was cool, impossibly clear, and the silence at the bottom of the crater was complete.
+
+<div class="portrait-pair">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/lake-chala-vegetation.jpg" alt="Dense vegetation on the crater walls">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/lake-chala-morning.jpg" alt="Morning light on Lake Chala">
+</div>
 
 > Some places don't need to be famous to be unforgettable.
 

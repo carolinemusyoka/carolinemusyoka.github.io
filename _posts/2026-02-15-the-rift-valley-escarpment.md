@@ -17,15 +17,25 @@ I've driven this road more times than I can count, but I still stop every time. 
 
 From the escarpment edge, the valley floor drops nearly 600 metres. On clear mornings you can see Lake Naivasha glinting in the distance, the extinct volcanoes of Longonot and Suswa rising from the valley floor, and the far western wall of the rift barely visible through the haze.
 
-![The Rift Valley escarpment stretching into the distance](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/rift_valley_escarpment.jpg)
+<div class="portrait-pair">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/rift-valley-viewpoint.jpg" alt="Rift Valley viewpoint">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/rift-valley-longonot.jpg" alt="Mount Longonot from the escarpment">
+</div>
 
 The light changes everything here. Early morning gives you soft gold and long shadows across the valley. Midday flattens it into a heat shimmer. Late afternoon brings drama — storm clouds building over the western rim, shafts of light breaking through to spotlight patches of the valley floor.
+
+<figure class="portrait-single">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/rift-valley-golden-hour.jpg" alt="Golden hour light over the Rift Valley">
+</figure>
 
 ## The Drive Down
 
 The escarpment road descends through a series of hairpin bends that drop you from highland cool into valley warmth in the space of fifteen minutes. It's one of the most dramatic altitude changes on any road in East Africa. Roll down the windows — you can feel the air temperature shift as you descend.
 
-![Lake Chala — another gem in the Rift Valley region](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/lake_chala_boat.jpg)
+<div class="portrait-pair">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/escarpment-road.jpg" alt="The winding escarpment road">
+  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/rift-valley-floor.jpg" alt="The valley floor from the road">
+</div>
 
 ## Why I Keep Coming Back
 

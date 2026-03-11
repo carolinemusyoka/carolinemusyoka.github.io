@@ -21,7 +21,6 @@ body_class: page-template
       <p class="story-card-category">{{ post.categories.first }}</p>
       {% endif %}
       <h3 class="story-card-title">{{ post.title }}</h3>
-      <p class="story-card-date">{{ post.date | date: "%B %d, %Y" }}</p>
     </div>
   </a>
   {% endfor %}

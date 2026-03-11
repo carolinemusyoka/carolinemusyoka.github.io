@@ -108,48 +108,272 @@ title: "Carol Musyoka"
 {% endif %}
 
 <!-- 24 Hours In -->
-<section class="city-guides-section">
+<section class="day-guide-section">
   <div class="section-header">
     <p class="section-label">City Guides</p>
     <h2 class="section-title">24 Hours In</h2>
   </div>
-  <div class="city-guides-grid">
-    <a href="/24-hours-in-stone-town/" class="city-card">
-      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/stone-town.jpg')"></div>
-      <div class="city-card-overlay"></div>
-      <div class="city-card-content">
-        <span class="city-card-hours">24 hrs</span>
-        <h3 class="city-card-name">Stone Town</h3>
-        <p class="city-card-country">Zanzibar, Tanzania</p>
+
+  <!-- City selector tabs -->
+  <div class="day-guide-cities">
+    <button class="day-city-tab active" data-city="stone-town">
+      <span class="day-city-name">Stone Town</span>
+      <span class="day-city-country">Zanzibar</span>
+    </button>
+    <button class="day-city-tab" data-city="lamu">
+      <span class="day-city-name">Lamu</span>
+      <span class="day-city-country">Kenya</span>
+    </button>
+    <button class="day-city-tab" data-city="nairobi">
+      <span class="day-city-name">Nairobi</span>
+      <span class="day-city-country">Kenya</span>
+    </button>
+    <button class="day-city-tab" data-city="diani">
+      <span class="day-city-name">Diani</span>
+      <span class="day-city-country">Kenya</span>
+    </button>
+  </div>
+
+  <!-- Stone Town itinerary -->
+  <div class="day-guide-content active" data-city="stone-town">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-1200,h-500,f-auto,q-80/cities/stone-town.jpg')"></div>
+      <div class="day-hero-overlay"></div>
+      <div class="day-hero-content">
+        <span class="day-hero-badge">24 Hours In</span>
+        <h3 class="day-hero-title">Stone Town</h3>
+        <p class="day-hero-subtitle">Zanzibar, Tanzania</p>
       </div>
-    </a>
-    <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/lamu.jpg')"></div>
-      <div class="city-card-overlay"></div>
-      <div class="city-card-content">
-        <span class="city-card-hours">24 hrs</span>
-        <h3 class="city-card-name">Lamu</h3>
-        <p class="city-card-country">Lamu Island, Kenya</p>
+    </div>
+
+    <div class="day-timeline">
+      <!-- Breakfast -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8h1a4 4 0 010 8h-1"/><path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+          </span>
+          <h4 class="day-block-title">Breakfast</h4>
+          <span class="day-block-time">7:30 AM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/lukmaan.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Lukmaan Restaurant</h5>
+              <p class="day-spot-desc">Vitumbua (rice pancakes) with chai in the narrow streets. Simple, cheap, and exactly what you want before a morning of walking.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </a>
-    <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/nairobi.jpg')"></div>
-      <div class="city-card-overlay"></div>
-      <div class="city-card-content">
-        <span class="city-card-hours">24 hrs</span>
-        <h3 class="city-card-name">Nairobi</h3>
-        <p class="city-card-country">Kenya</p>
+
+      <!-- Things to Do (Morning) -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          </span>
+          <h4 class="day-block-title">Things to Do</h4>
+          <span class="day-block-time">9:00 AM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/old-fort.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">The Old Fort</h5>
+              <p class="day-spot-desc">Start at the 17th-century fort. Free to enter — the open-air amphitheatre inside is worth seeing.</p>
+            </div>
+          </div>
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/medina-doors.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Wander the Medina</h5>
+              <p class="day-spot-desc">Get lost on purpose. Carved Zanzibari doors, spice shops, alleys that open into courtyards. Don't use a map.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </a>
-    <a href="#" class="city-card">
-      <div class="city-card-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-800,h-1000,f-auto,q-80/cities/diani.jpg')"></div>
-      <div class="city-card-overlay"></div>
-      <div class="city-card-content">
-        <span class="city-card-hours">24 hrs</span>
-        <h3 class="city-card-name">Diani</h3>
-        <p class="city-card-country">Kwale, Kenya</p>
+
+      <!-- Places to See -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h4 class="day-block-title">Places to See</h4>
+          <span class="day-block-time">11:00 AM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/house-of-wonders.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">House of Wonders</h5>
+              <p class="day-spot-desc">The largest building in Stone Town and a UNESCO site. The exterior and waterfront benches nearby are a good rest stop.</p>
+            </div>
+          </div>
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/hamamni-baths.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Hamamni Persian Baths</h5>
+              <p class="day-spot-desc">Built in the 1870s by Sultan Barghash. Beautifully preserved — the caretaker gives short tours for a small tip.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </a>
+
+      <!-- Lunch -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 002-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 00-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+          </span>
+          <h4 class="day-block-title">Lunch</h4>
+          <span class="day-block-time">1:30 PM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/coffee-house-rooftop.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Zanzibar Coffee House</h5>
+              <p class="day-spot-desc">Climb to the rooftop for panoramic views over tin rooftops and minarets. The seafood curry is excellent.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More Activities (Afternoon) -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </span>
+          <h4 class="day-block-title">More Activities</h4>
+          <span class="day-block-time">3:00 PM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/darajani-market.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Darajani Market</h5>
+              <p class="day-spot-desc">Chaotic, colourful, deeply photogenic. Spice stalls, fish market, fruit vendors — the afternoon light is incredible.</p>
+            </div>
+          </div>
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/waterfront-sunset.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Sunset at the Waterfront</h5>
+              <p class="day-spot-desc">Walk back to Forodhani Gardens. Sunset over the Indian Ocean with silhouettes of dhows. Find a spot on the seawall.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dinner -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2a10 10 0 1010 10 4 4 0 01-5-4 4 4 0 00-5-4"/><path d="M8.5 8.5v.01"/><path d="M16 15.5v.01"/><path d="M12 12v.01"/><path d="M11 17v.01"/><path d="M7 14v.01"/></svg>
+          </span>
+          <h4 class="day-block-title">Dinner</h4>
+          <span class="day-block-time">7:00 PM</span>
+        </div>
+        <div class="day-block-body">
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/night-market.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Forodhani Night Market</h5>
+              <p class="day-spot-desc">Fresh seafood, Zanzibar pizza, sugar cane juice, skewered mishkaki. Walk the full row first, then commit.</p>
+            </div>
+          </div>
+          <div class="day-spot">
+            <div class="day-spot-image" style="background-image: url('{{ site.imagekit_url }}/tr:w-400,h-400,f-auto,q-80/cities/stone-town/mercurys-bar.jpg')"></div>
+            <div class="day-spot-info">
+              <h5 class="day-spot-name">Mercury's Bar</h5>
+              <p class="day-spot-desc">End the night on this rooftop overlooking the harbour. Cold Kilimanjaro lager, live taarab music, sea breeze.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Where to Stay -->
+      <div class="day-block">
+        <div class="day-block-header">
+          <span class="day-block-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9h.01"/><path d="M9 13h.01"/><path d="M9 17h.01"/></svg>
+          </span>
+          <h4 class="day-block-title">Where to Stay</h4>
+        </div>
+        <div class="day-block-body day-stays">
+          <div class="day-stay">
+            <span class="day-stay-price">$$$$</span>
+            <h5 class="day-stay-name">Emerson on Hurumzi</h5>
+            <p class="day-stay-type">Boutique</p>
+          </div>
+          <div class="day-stay">
+            <span class="day-stay-price">$$$</span>
+            <h5 class="day-stay-name">Zanzibar Palace Hotel</h5>
+            <p class="day-stay-type">Mid-range</p>
+          </div>
+          <div class="day-stay">
+            <span class="day-stay-price">$$</span>
+            <h5 class="day-stay-name">Haven Guest House</h5>
+            <p class="day-stay-type">Budget</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-guide-cta">
+      <a href="/24-hours-in-stone-town/" class="btn btn-outline">Read Full Guide</a>
+    </div>
+  </div>
+
+  <!-- Lamu (placeholder) -->
+  <div class="day-guide-content" data-city="lamu">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-1200,h-500,f-auto,q-80/cities/lamu.jpg')"></div>
+      <div class="day-hero-overlay"></div>
+      <div class="day-hero-content">
+        <span class="day-hero-badge">24 Hours In</span>
+        <h3 class="day-hero-title">Lamu</h3>
+        <p class="day-hero-subtitle">Lamu Island, Kenya</p>
+      </div>
+    </div>
+    <div class="day-guide-coming-soon">
+      <p>Guide coming soon</p>
+    </div>
+  </div>
+
+  <!-- Nairobi (placeholder) -->
+  <div class="day-guide-content" data-city="nairobi">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-1200,h-500,f-auto,q-80/cities/nairobi.jpg')"></div>
+      <div class="day-hero-overlay"></div>
+      <div class="day-hero-content">
+        <span class="day-hero-badge">24 Hours In</span>
+        <h3 class="day-hero-title">Nairobi</h3>
+        <p class="day-hero-subtitle">Kenya</p>
+      </div>
+    </div>
+    <div class="day-guide-coming-soon">
+      <p>Guide coming soon</p>
+    </div>
+  </div>
+
+  <!-- Diani (placeholder) -->
+  <div class="day-guide-content" data-city="diani">
+    <div class="day-hero">
+      <div class="day-hero-bg" style="background-image: url('{{ site.imagekit_url }}/tr:w-1200,h-500,f-auto,q-80/cities/diani.jpg')"></div>
+      <div class="day-hero-overlay"></div>
+      <div class="day-hero-content">
+        <span class="day-hero-badge">24 Hours In</span>
+        <h3 class="day-hero-title">Diani</h3>
+        <p class="day-hero-subtitle">Kwale, Kenya</p>
+      </div>
+    </div>
+    <div class="day-guide-coming-soon">
+      <p>Guide coming soon</p>
+    </div>
   </div>
 </section>
 
