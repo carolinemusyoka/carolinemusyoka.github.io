@@ -63,12 +63,12 @@ title: "Carol Musyoka"
 <section class="potw">
   <div class="potw-inner">
     <div class="potw-image">
-      <img src="{{ site.imagekit_url }}/tr:w-1200,h-800,f-auto,q-80/potw/current.jpg" alt="Photo of the week">
+      <img src="https://ik.imagekit.io/ngmub3qdz/gallery/landscape/nomad-africa-contribution/rift_valley_escarpment.jpg?updatedAt=1772883551991" alt="Photo of the week — Rift Valley Escarpment">
     </div>
     <div class="potw-content">
       <p class="section-label">Photo of the Week</p>
-      <h2 class="potw-title">Where the Light Falls</h2>
-      <p class="potw-text">Sometimes you wait hours for a single frame. This was one of those moments — the sun breaking through after a storm, painting the landscape in gold. Shot handheld, no filters, just patience and timing.</p>
+      <h2 class="potw-title">Edge of the Rift</h2>
+      <p class="potw-text">The Great Rift Valley escarpment, shot from the viewpoint just past Limuru. The valley stretches endlessly below — volcanoes, lakes, and open sky. One of those moments where the scale leaves you speechless.</p>
       <div class="potw-meta">
         <span>
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -101,7 +101,6 @@ title: "Carol Musyoka"
       <p class="story-card-category">{{ post.categories.first }}</p>
       {% endif %}
       <h3 class="story-card-title">{{ post.title }}</h3>
-      <p class="story-card-date">{{ post.date | date: "%B %d, %Y" }}</p>
     </div>
   </a>
   {% endfor %}
@@ -225,44 +224,16 @@ title: "Carol Musyoka"
       </div>
       <h3 class="lifestyle-card-title">Road Trip Playlists</h3>
       <div class="spotify-embeds">
-        {% if site.spotify.playlist_1 %}
         <div class="spotify-embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{{ site.spotify.playlist_1 }}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/6fncBECF5w7wS9kETroQHV?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-        {% endif %}
-        {% if site.spotify.playlist_2 %}
         <div class="spotify-embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{{ site.spotify.playlist_2 }}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5T6nA8pJBJBhUzlANL6QDE?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-        {% endif %}
-        {% if site.spotify.playlist_3 %}
         <div class="spotify-embed">
-          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/{{ site.spotify.playlist_3 }}?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/06O0NStJzE2LhSlvRBZefs?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
         </div>
-        {% endif %}
       </div>
-      {% unless site.spotify.playlist_1 %}
-      <ul class="lifestyle-list">
-        <li>
-          <a href="#">
-            <strong>Golden Hour Drive</strong>
-            <span>Chill beats for sunset roads</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <strong>Coast Vibes</strong>
-            <span>Swahili coast mood</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <strong>Mountain Morning</strong>
-            <span>Acoustic & folk for early starts</span>
-          </a>
-        </li>
-      </ul>
-      {% endunless %}
     </div>
 
   </div>

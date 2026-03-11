@@ -17,9 +17,13 @@ I arrived mid-morning after an early start from Nyeri. The mist was still sittin
 
 The first tier is the most dramatic — a sheer drop into a mist-filled gorge. You hear it before you see it, a deep rumble that builds as you approach the viewpoint. The second and third tiers are partially hidden by vegetation, but you can catch glimpses through the canopy from the trail along the gorge rim.
 
+![Karuru Falls cascading through the Aberdare forest](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/karuru_main.jpg)
+
 ## The Aberdare Forest
 
 The forest itself is as much a reason to come as the falls. Bamboo groves, giant lobelias, black-and-white colobus monkeys crashing through the canopy overhead. The air smells of wet earth and cedar. It's cold up here — the Aberdares sit above 3,000 metres — and the dampness gets into everything.
+
+![The vast Rift Valley landscape visible from the highlands](https://ik.imagekit.io/ngmub3qdz/tr:w-1200,f-auto,q-80/gallery/landscape/nomad-africa-contribution/rift_valley_escarpment.jpg)
 
 ## What I'd Do Differently
 
