@@ -6,6 +6,8 @@ body_class: drive-page
 {% comment %} Resolve hero image {% endcomment %}
 {% if page.image_cdn and site.imagekit_url %}
   {% assign hero_img = site.imagekit_url | append: "/tr:w-1600,f-auto,q-80/" | append: page.image_cdn %}
+{% elsif page.image contains "://" %}
+  {% assign hero_img = page.image %}
 {% elsif page.image %}
   {% assign hero_img = page.image | relative_url %}
 {% endif %}
@@ -100,6 +102,10 @@ body_class: drive-page
         <div class="viewpoint-image">
           <img src="{{ site.imagekit_url }}/tr:w-700,f-auto,q-80/{{ point.image_cdn }}" alt="{{ point.name }}" loading="lazy">
         </div>
+        {% elsif point.image %}
+        <div class="viewpoint-image">
+          <img src="{{ point.image }}" alt="{{ point.name }}" loading="lazy">
+        </div>
         {% endif %}
         <div class="viewpoint-content">
           <h3 class="viewpoint-name">{{ point.name }}</h3>
@@ -148,6 +154,10 @@ body_class: drive-page
         {% if stop.image_cdn %}
         <div class="stop-image">
           <img src="{{ site.imagekit_url }}/tr:w-500,h-350,f-auto,q-80/{{ stop.image_cdn }}" alt="{{ stop.name }}" loading="lazy">
+        </div>
+        {% elsif stop.image %}
+        <div class="stop-image">
+          <img src="{{ stop.image }}" alt="{{ stop.name }}" loading="lazy">
         </div>
         {% endif %}
         <div class="stop-content">
