@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const animateElements = document.querySelectorAll(
     '.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner, ' +
     '.viewpoint-card, .stop-card, .city-activity-card, .accommodation-card, .tip-item, ' +
-    '.drive-overview, .drive-section, .guide-time-block, .practical-grid, .practical-item, .place-review'
+    '.drive-overview, .drive-section, .guide-time-block, .practical-grid, .practical-item'
   );
   if (animateElements.length && 'IntersectionObserver' in window) {
     const observer = new IntersectionObserver((entries) => {
