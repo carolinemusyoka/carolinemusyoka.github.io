@@ -225,6 +225,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Places page tab switching ---
+  const placesTabs = document.querySelectorAll('.places-tab');
+  const placesPanels = document.querySelectorAll('.places-panel');
+
+  if (placesTabs.length && placesPanels.length) {
+    placesTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.tab;
+        placesTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        placesPanels.forEach(p => {
+          p.classList.toggle('active', p.dataset.tab === target);
+        });
+      });
+    });
+  }
+
   // --- Intersection Observer for fade-in animations ---
   const animateElements = document.querySelectorAll(
     '.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner, ' +

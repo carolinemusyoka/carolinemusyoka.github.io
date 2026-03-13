@@ -4,7 +4,7 @@ title: "Nairobi to Naivasha"
 date: 2026-03-10
 categories: [Scenic Drives]
 tags: [kenya, driving, rift-valley, landscape]
-image_cdn: drives/nairobi-naivasha/hero.jpg
+image: https://ik.imagekit.io/ngmub3qdz/potw/POTW/20241124_073942.jpg?updatedAt=1773216462464
 location: "Rift Valley, Kenya"
 
 route:

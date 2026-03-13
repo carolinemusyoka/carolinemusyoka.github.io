@@ -4,8 +4,8 @@ title: "Exploring Kanunga"
 date: 2026-03-12
 categories: [Scenic Drives]
 tags: [kenya, kanunga, ndakaini, dam, waterfall, hiking]
-image: https://ik.imagekit.io/ngmub3qdz/potw/POTW/20250803_143242.jpg?updatedAt=1773216919590
-featured: true
+image: https://ik.imagekit.io/ngmub3qdz/potw/POTW/20251011_132425.jpg?updatedAt=1773216898286
+featured: false
 location: "Kanunga, Gatundu, Kenya"
 
 route:
