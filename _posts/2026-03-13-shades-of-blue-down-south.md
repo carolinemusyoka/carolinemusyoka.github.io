@@ -4,7 +4,7 @@ title: "Shades of Blue Down South"
 date: 2026-03-13
 categories: [Travel, Photography]
 tags: [kenya, diani, coast, beach, wasini, road-trip]
-image: https://ik.imagekit.io/ngmub3qdz/potw/POTW/20250608_081236.jpg?updatedAt=1773216767095
+image: https://ik.imagekit.io/ngmub3qdz/potw/South/20260123_064921.jpg?updatedAt=1773218080138
 featured: true
 location: "Diani Beach, Kenya"
 ---
