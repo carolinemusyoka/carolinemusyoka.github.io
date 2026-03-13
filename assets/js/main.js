@@ -101,7 +101,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const item = visible[index];
       const img = item.querySelector('img');
       const caption = item.querySelector('.gallery-item-caption');
-      lightboxImg.src = img.src;
+      // Load higher-res version for lightbox
+      const fullSrc = img.src.replace(/tr:w-\d+/, 'tr:w-1400');
+      lightboxImg.src = fullSrc;
       lightboxImg.alt = img.alt;
       if (lightboxCaption && caption) {
         lightboxCaption.textContent = caption.textContent;
