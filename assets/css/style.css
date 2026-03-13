@@ -900,86 +900,122 @@ img {
   display: block;
 }
 
-.places-grid {
+.places-list {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 3rem 2rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.place-review {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
-}
-
-.place-card {
-  position: relative;
-  border-radius: 6px;
+  grid-template-columns: 320px 1fr;
+  gap: 2.5rem;
+  background: var(--color-bg-card);
+  border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 3 / 4;
-  cursor: pointer;
-  display: block;
-  color: inherit;
+  border: 1px solid var(--color-border);
+  transition: border-color 0.4s ease, transform 0.4s ease;
 }
 
-.place-card-image {
-  position: absolute;
-  inset: 0;
+.place-review:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+}
+
+.place-review-image {
+  width: 100%;
+  min-height: 360px;
   background-size: cover;
   background-position: center;
   transition: transform 0.8s ease;
 }
 
-.place-card:hover .place-card-image {
-  transform: scale(1.05);
+.place-review:hover .place-review-image {
+  transform: scale(1.03);
 }
 
-.place-card-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 0, 0, 0.9) 0%,
-    rgba(0, 0, 0, 0.3) 40%,
-    rgba(0, 0, 0, 0.1) 70%
-  );
+.place-review-body {
+  padding: 2rem 2rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.place-card-content {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 1.5rem;
-}
-
-.place-card-location {
+.place-review-location {
   font-size: 0.65rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
-.place-card-name {
+.place-review-name {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: var(--color-white);
   line-height: 1.2;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
 }
 
-.place-card-vibe {
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.7);
-  line-height: 1.4;
-  margin-bottom: 0.5rem;
+.place-review-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
 }
 
-.place-card-price {
-  font-size: 0.75rem;
+.place-review-rating .stars {
   color: var(--color-accent);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+}
+
+.place-review-price {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
   font-weight: 600;
   letter-spacing: 0.05em;
+}
+
+.place-review-text {
+  font-size: 0.95rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  margin-bottom: 1.25rem;
+}
+
+.place-review-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.place-review-details span {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+}
+
+.place-review-link {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color var(--transition);
+  align-self: flex-start;
+}
+
+.place-review-link:hover {
+  color: var(--color-white);
 }
 
 .page-content {
@@ -1968,8 +2004,9 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .places-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .place-review {
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
   }
 
   .article-item {
@@ -2214,10 +2251,22 @@ img {
   }
 
   /* Places page */
-  .places-grid {
-    grid-template-columns: 1fr 1fr;
-    padding: 2rem 1.25rem;
-    gap: 1rem;
+  .place-review {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .place-review-image {
+    min-height: 280px;
+  }
+
+  .place-review-body {
+    padding: 1.5rem;
+  }
+
+  .places-list {
+    padding: 2rem 1.25rem 4rem;
+    gap: 2rem;
   }
 
   .places-tab {
@@ -2456,8 +2505,21 @@ img {
     font-size: 0.95rem;
   }
 
-  .places-grid {
-    grid-template-columns: 1fr;
+  .places-list {
+    padding: 1.5rem 1rem 3rem;
+    gap: 1.5rem;
+  }
+
+  .place-review-image {
+    min-height: 240px;
+  }
+
+  .place-review-name {
+    font-size: 1.3rem;
+  }
+
+  .place-review-text {
+    font-size: 0.9rem;
   }
 
   .places-tab {
