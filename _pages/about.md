@@ -7,7 +7,7 @@ subtitle: "Photographer, traveler, storyteller"
 
 ## Hello, I'm Carol
 
-I'm a photographer and writer with a deep love for travel and storytelling. Through my lens and my words, I try to capture the raw beauty of the places I visit and the people I meet along the way.
+I'm a hobbyist photographer and writer with a deep love for travel and storytelling. Through my lens and my words, I try to capture the raw beauty of the places I visit and the people I meet along the way.
 
 When I'm not on the road, you'll find me writing about technology, working on code, or planning the next adventure. This blog is where all of those worlds come together — a space for visual stories, travel reflections, and the occasional deep-dive article.
 

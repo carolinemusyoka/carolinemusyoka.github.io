@@ -25,7 +25,7 @@ From the escarpment edge, the valley floor drops nearly 600 metres. On clear mor
 The light changes everything here. Early morning gives you soft gold and long shadows across the valley. Midday flattens it into a heat shimmer. Late afternoon brings drama — storm clouds building over the western rim, shafts of light breaking through to spotlight patches of the valley floor.
 
 <figure class="portrait-single">
-  <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-600,f-auto,q-80/gallery/portrait/rift-valley-golden-hour.jpg" alt="Golden hour light over the Rift Valley">
+  <img src="https://ik.imagekit.io/ngmub3qdz/gallery/landscape/nomad-africa-contribution/low_escarpment.jpg?updatedAt=1772883507066" alt="Golden hour light over the Rift Valley">
 </figure>
 
 ## The Drive Down
