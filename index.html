@@ -84,21 +84,45 @@ title: "Carol Musyoka"
 </section>
 
 <!-- Featured Stories -->
-{% if site.posts.size > 0 %}
+{% assign featured_stories = site.posts | where_exp: "post", "post.featured == true" %}
+{% if featured_stories.size > 0 %}
 <div class="section-header">
   <p class="section-label">Featured</p>
   <h2 class="section-title">Latest Stories</h2>
 </div>
 
 <div class="stories-grid">
-  {% for post in site.posts limit: 5 %}
+  {% for post in featured_stories limit: 5 %}
   {% include resolve-image.html src=post.image cdn=post.image_cdn width="800" %}
   <a href="{{ post.url | relative_url }}" class="story-card">
     <div class="story-card-bg" style="background-image: url('{{ resolved_img }}')"></div>
     <div class="story-card-overlay"></div>
     <div class="story-card-content">
-      {% if post.categories.first %}
-      <p class="story-card-category">{{ post.categories.first }}</p>
+      {% assign cat = post.categories | join: ", " %}
+      {% if cat contains "Scenic Drives" %}
+      <span class="story-tag story-tag--drive">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Scenic Drive
+      </span>
+      {% elsif cat contains "City Guides" %}
+      <span class="story-tag story-tag--guide">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        City Guide
+      </span>
+      {% elsif cat contains "Travel" %}
+      <span class="story-tag story-tag--travel">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Travel
+      </span>
+      {% elsif cat contains "Photography" %}
+      <span class="story-tag story-tag--photo">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        Photography
+      </span>
+      {% elsif post.categories.first %}
+      <span class="story-tag">
+        {{ post.categories.first }}
+      </span>
       {% endif %}
       <h3 class="story-card-title">{{ post.title }}</h3>
     </div>
