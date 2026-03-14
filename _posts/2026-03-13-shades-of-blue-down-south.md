@@ -5,6 +5,7 @@ date: 2026-03-13
 categories: [Travel, Photography]
 tags: [kenya, diani, coast, beach, wasini, road-trip]
 image: https://ik.imagekit.io/ngmub3qdz/potw/South/20241004_085014.jpg
+image_card: https://ik.imagekit.io/ngmub3qdz/potw/South/20260124_121031.jpg?updatedAt=1773218086378
 featured: false
 location: "Diani Beach, Kenya"
 ---

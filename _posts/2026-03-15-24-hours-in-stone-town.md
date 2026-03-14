@@ -4,8 +4,9 @@ title: "24 Hours in Stone Town"
 date: 2026-03-15
 categories: [City Guides]
 tags: [zanzibar, culture, street-food, historic, tanzania]
-image: "https://ik.imagekit.io/ngmub3qdz/potw/POTW/20251212_172250.jpg"
+image: "https://ik.imagekit.io/ngmub3qdz/potw/Stone%20Town/20240826_173622.jpg?updatedAt=1773217162818"
 location: "Stone Town, Zanzibar"
+permalink: /24-hours-in-stone-town/
 
 city:
   name: "Stone Town"

@@ -4,7 +4,7 @@ title: "Nairobi to Kakuzi"
 date: 2026-03-10
 categories: [Scenic Drives]
 tags: [kenya, driving, central-kenya, farm, agriculture, thika-highway]
-image: https://ik.imagekit.io/ngmub3qdz/potw/POTW/20241124_073942.jpg?updatedAt=1773216462464
+image: https://ik.imagekit.io/ngmub3qdz/20240420_090830.jpg?updatedAt=1773478483247
 location: "Makuyu, Murang'a County, Kenya"
 
 route:

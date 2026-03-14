@@ -12,7 +12,8 @@ body_class: page-template
 
 <div class="articles-page-grid">
   {% for post in site.posts %}
-  {% include resolve-image.html src=post.image cdn=post.image_cdn width="800" %}
+  {% assign card_img = post.image_card | default: post.image %}
+  {% include resolve-image.html src=card_img cdn=post.image_cdn width="800" %}
   <a href="{{ post.url | relative_url }}" class="story-card story-card--article">
     <div class="story-card-bg" style="background-image: url('{{ resolved_img }}')"></div>
     <div class="story-card-overlay"></div>
