@@ -67,11 +67,12 @@ img {
   right: 0;
   z-index: 1000;
   padding: 1.25rem 2rem;
+  background: linear-gradient(to bottom, rgba(10, 10, 10, 0.75) 0%, rgba(10, 10, 10, 0.35) 70%, transparent 100%);
   transition: background var(--transition), backdrop-filter var(--transition);
 }
 
 .site-header.scrolled {
-  background: rgba(10, 10, 10, 0.92);
+  background: rgba(10, 10, 10, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -373,10 +374,23 @@ img {
 
 .story-card {
   position: relative;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
   aspect-ratio: 3 / 4;
   cursor: pointer;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardSlideUp 0.6s ease forwards;
+}
+
+.story-card:nth-child(1) { animation-delay: 0.1s; }
+.story-card:nth-child(2) { animation-delay: 0.2s; }
+.story-card:nth-child(3) { animation-delay: 0.3s; }
+.story-card:nth-child(4) { animation-delay: 0.4s; }
+.story-card:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes cardSlideUp {
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .story-card-bg {
@@ -415,6 +429,57 @@ img {
   text-transform: uppercase;
   color: var(--color-accent);
   margin-bottom: 0.5rem;
+}
+
+.story-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  margin-bottom: 0.6rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  animation: tagFloat 0.6s ease both;
+}
+
+.story-card:nth-child(1) .story-tag { animation-delay: 0.1s; }
+.story-card:nth-child(2) .story-tag { animation-delay: 0.2s; }
+.story-card:nth-child(3) .story-tag { animation-delay: 0.3s; }
+.story-card:nth-child(4) .story-tag { animation-delay: 0.4s; }
+.story-card:nth-child(5) .story-tag { animation-delay: 0.5s; }
+
+@keyframes tagFloat {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.story-tag--drive {
+  background: rgba(110, 180, 140, 0.2);
+  color: #6eb48c;
+  border-color: rgba(110, 180, 140, 0.25);
+}
+
+.story-tag--travel {
+  background: rgba(201, 169, 110, 0.2);
+  color: var(--color-accent);
+  border-color: rgba(201, 169, 110, 0.25);
+}
+
+.story-tag--guide {
+  background: rgba(110, 160, 201, 0.2);
+  color: #6ea0c9;
+  border-color: rgba(110, 160, 201, 0.25);
+}
+
+.story-tag--photo {
+  background: rgba(180, 130, 200, 0.2);
+  color: #b482c8;
+  border-color: rgba(180, 130, 200, 0.25);
 }
 
 .story-card-title {
@@ -2496,6 +2561,11 @@ img {
   .story-card-category {
     font-size: 0.6rem;
     margin-bottom: 0.4rem;
+  }
+
+  .story-tag {
+    font-size: 0.55rem;
+    padding: 0.25rem 0.6rem;
   }
 
   /* Articles page */
