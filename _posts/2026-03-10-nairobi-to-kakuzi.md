@@ -18,19 +18,19 @@ route:
 viewpoints:
   - name: "Limuru Tea Estates Overlook"
     description: "Just past Limuru town, the road opens up to rolling green tea plantations that stretch to the horizon. On a clear morning the view extends all the way to the Aberdares. Pull over at the layby on the left — it's worth the five minutes."
-    image_cdn: drives/nairobi-naivasha/limuru-tea.jpg
+    image_cdn: potw/POTW/20241124_072723.jpg
     km_marker: 28
     elevation_m: 2100
 
   - name: "The Great Rift Escarpment Viewpoint"
     description: "This is the moment the drive becomes unforgettable. The road drops off the escarpment and the entire Rift Valley opens below you — wide, hazy, impossibly vast. There's a signed viewpoint with parking on the left side."
-    image_cdn: drives/nairobi-naivasha/escarpment.jpg
+    image_cdn: potw/POTW/20241124_073937.jpg
     km_marker: 52
     elevation_m: 2300
 
   - name: "Lake Naivasha Approach"
     description: "As you descend to the valley floor, the landscape shifts from highland green to golden savannah. Watch for zebra and giraffe along the last 10km stretch as the lake comes into view."
-    image_cdn: drives/nairobi-naivasha/naivasha-lake.jpg
+    image_cdn: potw/POTW/20241124_073942.jpg
     km_marker: 85
     elevation_m: 1884
 
@@ -38,22 +38,22 @@ stops:
   - category: fuel
     name: "Shell Station — Limuru"
     description: "Last reliable fuel stop before the descent. Clean washrooms, mini-mart, and a decent coffee shop. Fill up here."
-    image_cdn: drives/nairobi-naivasha/shell-limuru.jpg
+    image_cdn: potw/POTW/20250118_081847.jpg
 
   - category: food
     name: "Kentmere Club"
     description: "Colonial-era country club with a restaurant serving solid breakfasts and lunch. Beautiful gardens, very peaceful. A proper sit-down stop."
-    image_cdn: drives/nairobi-naivasha/kentmere.jpg
+    image_cdn: potw/POTW/20250118_081854.jpg
 
   - category: food
     name: "Mai Mahiu Roadside Grills"
     description: "At the base of the escarpment, smoky roadside stalls serve the best nyama choma (grilled meat) you'll find on this route. Cheap, filling, and full of character."
-    image_cdn: drives/nairobi-naivasha/mai-mahiu.jpg
+    image_cdn: potw/POTW/20250118_081905.jpg
 
   - category: parking
     name: "Hell's Gate National Park Entrance"
     description: "If you want to break the drive with a hike or cycle through the gorge, Hell's Gate is just south of Naivasha. Secure parking, KWS facilities, and bike rentals at the gate."
-    image_cdn: drives/nairobi-naivasha/hells-gate.jpg
+    image_cdn: potw/POTW/20250118_111131.jpg
 
 tips:
   - "Leave Nairobi before 7 AM to avoid Waiyaki Way traffic — it can add an hour to your drive."
