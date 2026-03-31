@@ -4120,13 +4120,13 @@ img {
 }
 
 /* --- Skills Grid --- */
-.pf-skills {
+.portfolio-page .pf-skills {
   padding: 5rem 0;
-  background: var(--owl-bg-alt);
+  background: #01111d;
 }
 
-.pf-skills-grid {
-  max-width: var(--max-width);
+.portfolio-page .pf-skills-grid {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
@@ -4134,75 +4134,103 @@ img {
   gap: 1.5rem;
 }
 
-.pf-skill-group {
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid var(--owl-border);
-  background: var(--owl-surface);
-  transition: all 0.3s ease;
+.portfolio-page .pf-skill-group {
+  position: relative;
+  padding: 1.8rem 1.5rem 1.5rem;
+  border-radius: 14px;
+  border: 1px solid #1d3b53;
+  background: #0b2942;
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.35s ease;
 }
 
-.pf-skill-group:hover {
-  border-color: rgba(130, 170, 255, 0.25);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+.portfolio-page .pf-skill-top-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, #82aaff);
+  opacity: 0.6;
+  transition: opacity 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pf-skill-icon {
-  width: 44px;
-  height: 44px;
+.portfolio-page .pf-skill-group:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent, #82aaff);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 30px var(--glow, rgba(130, 170, 255, 0.12));
+}
+
+.portfolio-page .pf-skill-group:hover .pf-skill-top-border {
+  opacity: 1;
+  box-shadow: 0 0 20px var(--glow, rgba(130, 170, 255, 0.3));
+}
+
+.portfolio-page .pf-skill-icon {
+  width: 48px;
+  height: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  background: rgba(130, 170, 255, 0.08);
-  color: var(--owl-accent);
+  border-radius: 12px;
+  background: var(--glow, rgba(130, 170, 255, 0.08));
+  color: var(--accent, #82aaff);
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.pf-skill-group:nth-child(2) .pf-skill-icon { color: var(--owl-green); background: rgba(173, 219, 103, 0.08); }
-.pf-skill-group:nth-child(3) .pf-skill-icon { color: var(--owl-accent2); background: rgba(199, 146, 234, 0.08); }
-.pf-skill-group:nth-child(4) .pf-skill-icon { color: var(--owl-orange); background: rgba(247, 140, 108, 0.08); }
-.pf-skill-group:nth-child(5) .pf-skill-icon { color: var(--owl-cyan); background: rgba(128, 203, 196, 0.08); }
-.pf-skill-group:nth-child(6) .pf-skill-icon { color: var(--owl-yellow); background: rgba(255, 203, 107, 0.08); }
+.portfolio-page .pf-skill-group:hover .pf-skill-icon {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px var(--glow, rgba(130, 170, 255, 0.15));
+}
 
-.pf-skill-title {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
+.portfolio-page .pf-skill-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.95rem;
   font-weight: 600;
   color: #ffffff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.85rem;
+  letter-spacing: 0.01em;
 }
 
-.pf-skill-tags {
+.portfolio-page .pf-skill-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem;
+  gap: 0.45rem;
 }
 
-.pf-skill-tags span {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.7rem;
-  color: var(--owl-text);
-  padding: 0.2rem 0.5rem;
-  border-radius: 4px;
-  background: rgba(214, 222, 235, 0.06);
-  opacity: 0.75;
-  transition: all 0.2s ease;
+.portfolio-page .pf-skill-tags span {
+  font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+  font-size: 0.72rem;
+  color: #d6deeb;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  background: rgba(214, 222, 235, 0.07);
+  border: 1px solid rgba(214, 222, 235, 0.06);
+  transition: all 0.25s ease;
+  cursor: default;
 }
 
-.pf-skill-tags span:hover {
-  opacity: 1;
+.portfolio-page .pf-skill-tags span:hover {
+  color: var(--accent, #82aaff);
   background: rgba(214, 222, 235, 0.12);
+  border-color: var(--accent, #82aaff);
+  box-shadow: 0 0 12px var(--glow, rgba(130, 170, 255, 0.1));
+  transform: translateY(-1px);
 }
 
 @media (max-width: 768px) {
-  .pf-skills-grid {
+  .portfolio-page .pf-skills-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 480px) {
-  .pf-skills-grid {
+  .portfolio-page .pf-skills-grid {
     grid-template-columns: 1fr;
   }
 }
