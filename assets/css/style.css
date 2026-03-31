@@ -3953,18 +3953,6 @@ img {
   z-index: 2;
 }
 
-/* --- Grid background --- */
-.pf-grid-bg,
-.pf-cta-grid-bg {
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(130, 170, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(130, 170, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
-  pointer-events: none;
-  z-index: 0;
-}
 
 /* --- Hero --- */
 .pf-hero {
@@ -4131,46 +4119,92 @@ img {
   margin-top: 0.4rem;
 }
 
-/* --- Ticker / Tech Stack --- */
-.pf-ticker-section {
-  padding: 1.5rem 0;
-  border-top: 1px solid var(--owl-border);
-  border-bottom: 1px solid var(--owl-border);
-  overflow: hidden;
+/* --- Skills Grid --- */
+.pf-skills {
+  padding: 5rem 0;
   background: var(--owl-bg-alt);
 }
 
-.pf-ticker {
-  overflow: hidden;
-  white-space: nowrap;
+.pf-skills-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
-.pf-ticker-track {
-  display: inline-flex;
-  gap: 2rem;
-  animation: pf-scroll 30s linear infinite;
-}
-
-.pf-ticker-track span {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.8rem;
-  color: var(--owl-text-muted);
-  padding: 0.35rem 1rem;
+.pf-skill-group {
+  padding: 1.5rem;
+  border-radius: 12px;
   border: 1px solid var(--owl-border);
-  border-radius: 4px;
-  white-space: nowrap;
+  background: var(--owl-surface);
   transition: all 0.3s ease;
 }
 
-.pf-ticker-track span:hover {
-  color: var(--owl-accent);
-  border-color: var(--owl-accent);
-  background: var(--owl-glow);
+.pf-skill-group:hover {
+  border-color: rgba(130, 170, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-@keyframes pf-scroll {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+.pf-skill-icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: rgba(130, 170, 255, 0.08);
+  color: var(--owl-accent);
+  margin-bottom: 1rem;
+}
+
+.pf-skill-group:nth-child(2) .pf-skill-icon { color: var(--owl-green); background: rgba(173, 219, 103, 0.08); }
+.pf-skill-group:nth-child(3) .pf-skill-icon { color: var(--owl-accent2); background: rgba(199, 146, 234, 0.08); }
+.pf-skill-group:nth-child(4) .pf-skill-icon { color: var(--owl-orange); background: rgba(247, 140, 108, 0.08); }
+.pf-skill-group:nth-child(5) .pf-skill-icon { color: var(--owl-cyan); background: rgba(128, 203, 196, 0.08); }
+.pf-skill-group:nth-child(6) .pf-skill-icon { color: var(--owl-yellow); background: rgba(255, 203, 107, 0.08); }
+
+.pf-skill-title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.pf-skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.pf-skill-tags span {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  color: var(--owl-text);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  background: rgba(214, 222, 235, 0.06);
+  opacity: 0.75;
+  transition: all 0.2s ease;
+}
+
+.pf-skill-tags span:hover {
+  opacity: 1;
+  background: rgba(214, 222, 235, 0.12);
+}
+
+@media (max-width: 768px) {
+  .pf-skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-skills-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --- Section headers --- */

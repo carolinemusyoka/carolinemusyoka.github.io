@@ -8,7 +8,6 @@ body_class: portfolio-page
 <!-- Terminal-style hero -->
 <section class="pf-hero">
   <div class="pf-scanlines"></div>
-  <div class="pf-grid-bg"></div>
   <div class="pf-hero-inner">
     <div class="pf-terminal-prompt">
       <span class="pf-prompt-symbol">&#x276F;</span>
@@ -36,20 +35,74 @@ body_class: portfolio-page
   </div>
 </section>
 
-<!-- Tech stack ticker -->
-<section class="pf-ticker-section">
-  <div class="pf-ticker">
-    <div class="pf-ticker-track">
-      <span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span><span>Clean Architecture</span>
-      <span>Coroutines</span><span>Flow</span><span>Room</span><span>Retrofit</span><span>GraphQL</span>
-      <span>Hilt</span><span>Firebase</span><span>NFC</span><span>BLE</span><span>Flutter</span>
-      <span>TypeScript</span><span>React</span><span>GitHub Actions</span><span>Material Design 3</span>
-      <!-- duplicate for seamless scroll -->
-      <span>Kotlin</span><span>Jetpack Compose</span><span>MVVM</span><span>Clean Architecture</span>
-      <span>Coroutines</span><span>Flow</span><span>Room</span><span>Retrofit</span><span>GraphQL</span>
-      <span>Hilt</span><span>Firebase</span><span>NFC</span><span>BLE</span><span>Flutter</span>
-      <span>TypeScript</span><span>React</span><span>GitHub Actions</span><span>Material Design 3</span>
+<!-- Skills -->
+<section class="pf-skills">
+  <div class="pf-section-header">
+    <span class="pf-section-tag">// tech_skills</span>
+    <h2 class="pf-section-title">What I Work With</h2>
+  </div>
+  <div class="pf-skills-grid">
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Languages</h3>
+      <div class="pf-skill-tags">
+        <span>Kotlin</span><span>Java</span><span>TypeScript</span><span>C#</span><span>SQL</span><span>Dart</span>
+      </div>
     </div>
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Mobile</h3>
+      <div class="pf-skill-tags">
+        <span>Jetpack Compose</span><span>Android SDK</span><span>Flutter</span><span>Material 3</span><span>AOSP</span>
+      </div>
+    </div>
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Architecture</h3>
+      <div class="pf-skill-tags">
+        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>SOLID</span><span>Hilt</span><span>Koin</span>
+      </div>
+    </div>
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Hardware</h3>
+      <div class="pf-skill-tags">
+        <span>NFC</span><span>BLE</span><span>GPS</span><span>LiDAR</span><span>Camera</span><span>IoT Sensors</span>
+      </div>
+    </div>
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Networking</h3>
+      <div class="pf-skill-tags">
+        <span>REST</span><span>GraphQL</span><span>Retrofit</span><span>WebSockets</span><span>gRPC</span><span>Offline-first</span>
+      </div>
+    </div>
+
+    <div class="pf-skill-group pf-card-animate">
+      <div class="pf-skill-icon">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 class="pf-skill-title">Testing & DevOps</h3>
+      <div class="pf-skill-tags">
+        <span>JUnit</span><span>Espresso</span><span>GitHub Actions</span><span>CircleCI</span><span>Datadog</span><span>Firebase</span>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -233,7 +286,6 @@ body_class: portfolio-page
 <!-- CTA -->
 <section class="pf-cta">
   <div class="pf-cta-inner">
-    <div class="pf-cta-grid-bg"></div>
     <span class="pf-section-tag">// let's_connect</span>
     <h2 class="pf-cta-title">Got an idea? Let's build it.</h2>
     <p class="pf-cta-text">I'm always interested in challenging Android projects and new opportunities to create impactful mobile experiences.</p>
@@ -246,6 +298,10 @@ body_class: portfolio-page
       <a href="https://play.google.com/store/apps/developer?id=carolmusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost pf-btn-lg">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
         Play Store
+      </a>
+      <a href="https://www.linkedin.com/in/carol-musyoka/" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost pf-btn-lg">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
       </a>
     </div>
   </div>
