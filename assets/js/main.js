@@ -242,6 +242,94 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // --- Portfolio page animations ---
+  if (document.body.classList.contains('portfolio-page')) {
+
+    // Typing effect
+    const typedEl = document.getElementById('pf-typed');
+    if (typedEl) {
+      const phrases = [
+        'carol.buildApp("android")',
+        'deploy --target playstore',
+        'git push origin main',
+        'gradle assembleRelease'
+      ];
+      let phraseIdx = 0;
+      let charIdx = 0;
+      let deleting = false;
+      let pauseTime = 0;
+
+      const typeLoop = () => {
+        const current = phrases[phraseIdx];
+        if (!deleting) {
+          typedEl.textContent = current.substring(0, charIdx + 1);
+          charIdx++;
+          if (charIdx === current.length) {
+            deleting = true;
+            pauseTime = 2000;
+          } else {
+            pauseTime = 60 + Math.random() * 40;
+          }
+        } else {
+          typedEl.textContent = current.substring(0, charIdx - 1);
+          charIdx--;
+          if (charIdx === 0) {
+            deleting = false;
+            phraseIdx = (phraseIdx + 1) % phrases.length;
+            pauseTime = 400;
+          } else {
+            pauseTime = 30;
+          }
+        }
+        setTimeout(typeLoop, pauseTime);
+      };
+      setTimeout(typeLoop, 800);
+    }
+
+    // Portfolio stat counters
+    const pfStats = document.querySelectorAll('.pf-stat-num');
+    if (pfStats.length && 'IntersectionObserver' in window) {
+      const animatePfCounter = (el) => {
+        const target = parseInt(el.dataset.target, 10);
+        const duration = 1800;
+        const start = performance.now();
+        const step = (ts) => {
+          const p = Math.min((ts - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          el.textContent = Math.floor(eased * target);
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = target;
+        };
+        requestAnimationFrame(step);
+      };
+      const pfObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) { animatePfCounter(e.target); pfObserver.unobserve(e.target); }
+        });
+      }, { threshold: 0.5 });
+      pfStats.forEach(el => pfObserver.observe(el));
+    }
+
+    // Card scroll-in animations
+    const pfCards = document.querySelectorAll('.pf-card-animate');
+    if (pfCards.length && 'IntersectionObserver' in window) {
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('pf-visible');
+            }, i * 120);
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      pfCards.forEach((el, i) => {
+        el.style.transitionDelay = `${i * 0.08}s`;
+        cardObserver.observe(el);
+      });
+    }
+  }
+
   // --- Intersection Observer for fade-in animations ---
   const animateElements = document.querySelectorAll(
     '.story-card, .article-item, .gallery-item, .travel-pin, .potw-inner, .newsletter-inner, ' +
