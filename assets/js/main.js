@@ -328,6 +328,36 @@ document.addEventListener('DOMContentLoaded', () => {
         cardObserver.observe(el);
       });
     }
+
+    // Section header reveals
+    const pfHeaders = document.querySelectorAll('.pf-section-header');
+    if (pfHeaders.length && 'IntersectionObserver' in window) {
+      const headerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('pf-visible');
+            headerObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.2 });
+      pfHeaders.forEach(el => headerObserver.observe(el));
+    }
+
+    // Hand-drawn arrow draw-on animation
+    const pfArrows = document.querySelectorAll('.pf-arrow, .pf-arrow-section, .pf-arrow-cta');
+    if (pfArrows.length && 'IntersectionObserver' in window) {
+      const arrowObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              entry.target.classList.add('pf-drawn');
+            }, 300);
+            arrowObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+      pfArrows.forEach(el => arrowObserver.observe(el));
+    }
   }
 
   // --- Intersection Observer for fade-in animations ---
