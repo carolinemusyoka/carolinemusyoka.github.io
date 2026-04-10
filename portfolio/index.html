@@ -53,211 +53,321 @@
 
 
   <main>
-    <!-- Terminal-style hero -->
+    <!-- Hero -->
 <section class="pf-hero">
-  <div class="pf-scanlines"></div>
   <div class="pf-hero-inner">
-    <div class="pf-terminal-prompt">
-      <span class="pf-prompt-symbol">&#x276F;</span>
-      <span class="pf-typed-text" id="pf-typed"></span>
-      <span class="pf-cursor">|</span>
+    <div class="pf-hero-text">
+      <p class="pf-hero-greeting">Hello!</p>
+      <h1 class="pf-hero-name">I'm <strong>Carol</strong></h1>
+      <div class="pf-hero-role">
+        <span class="pf-role-line"></span>
+        <span>Android Engineer</span>
+        <span class="pf-role-star">&#10038;</span>
+      </div>
+      <p class="pf-hero-bio">
+        Hello! I'm a <strong>mobile-first builder</strong>, Android engineer,
+        clean architecture advocate &amp; human-loving introvert
+      </p>
+      <ul class="pf-hero-values">
+        <li>Apps must be fast, offline-first &amp; user-centered</li>
+        <li>Clean architecture &amp; testable code always</li>
+        <li>Ship early, iterate, and listen to users</li>
+      </ul>
+      <div class="pf-hero-actions">
+        <a href="/contact/" class="pf-btn pf-btn-primary">Let's Talk</a>
+        <a href="https://www.linkedin.com/in/carol-musyoka/" target="_blank" rel="noopener" class="pf-btn pf-btn-outline">
+          LinkedIn
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+        </a>
+      </div>
     </div>
-    <h1 class="pf-hero-title">
-      <span class="pf-glitch" data-text="My Portfolio">My Portfolio</span>
-    </h1>
-    <p class="pf-hero-subtitle">Android Engineer &middot; Mobile-first builder &middot; Shipping to production since 2018</p>
-    <div class="pf-hero-stats">
-      <div class="pf-stat">
-        <span class="pf-stat-num" data-target="7">0</span><span class="pf-stat-plus">+</span>
-        <span class="pf-stat-label">Years Experience</span>
+    <div class="pf-hero-image">
+      <div class="pf-image-frame">
+        <img src="https://ik.imagekit.io/ngmub3qdz/tr:w-560,h-560,fo-face,f-auto,q-80/avatar.jpg" alt="Carol Musyoka" loading="eager">
+        <div class="pf-image-badge">
+          <span class="pf-typed-text" id="pf-typed"></span>
+          <span class="pf-cursor">|</span>
+        </div>
       </div>
-      <div class="pf-stat">
-        <span class="pf-stat-num" data-target="230">0</span><span class="pf-stat-plus">K+</span>
-        <span class="pf-stat-label">Users Served</span>
-      </div>
-      <div class="pf-stat">
-        <span class="pf-stat-num" data-target="10">0</span><span class="pf-stat-plus">+</span>
-        <span class="pf-stat-label">Apps Shipped</span>
-      </div>
+    </div>
+  </div>
+  <div class="pf-hero-stats">
+    <div class="pf-stat">
+      <span class="pf-stat-num" data-target="7">0</span><span class="pf-stat-plus">+</span>
+      <span class="pf-stat-label">Years</span>
+    </div>
+    <div class="pf-stat">
+      <span class="pf-stat-num" data-target="230">0</span><span class="pf-stat-plus">K+</span>
+      <span class="pf-stat-label">Users</span>
+    </div>
+    <div class="pf-stat">
+      <span class="pf-stat-num" data-target="10">0</span><span class="pf-stat-plus">+</span>
+      <span class="pf-stat-label">Apps</span>
     </div>
   </div>
 </section>
 
-<!-- Skills -->
-<section class="pf-skills">
+<!-- Scrolling Marquee -->
+<div class="pf-marquee">
+  <div class="pf-marquee-track">
+    <div class="pf-marquee-content">
+      <span>ANDROID</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>KOTLIN</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>JETPACK COMPOSE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>CLEAN ARCHITECTURE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>MOBILE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>OFFLINE-FIRST</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>NFC &amp; BLE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>MATERIAL DESIGN</span><span class="pf-marquee-dot">&#10038;</span>
+    </div>
+    <div class="pf-marquee-content" aria-hidden="true">
+      <span>ANDROID</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>KOTLIN</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>JETPACK COMPOSE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>CLEAN ARCHITECTURE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>MOBILE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>OFFLINE-FIRST</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>NFC &amp; BLE</span><span class="pf-marquee-dot">&#10038;</span>
+      <span>MATERIAL DESIGN</span><span class="pf-marquee-dot">&#10038;</span>
+    </div>
+  </div>
+</div>
+
+<!-- Social Bar -->
+<div class="pf-social-bar">
+  <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+    GITHUB
+  </a>
+  <a href="https://play.google.com/store/apps/developer?id=carolmusyoka" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+    PLAY STORE
+  </a>
+  <a href="https://www.linkedin.com/in/carol-musyoka/" target="_blank" rel="noopener">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    LINKEDIN
+  </a>
+  <span class="pf-social-divider"></span>
+  <a href="mailto:carolmusyoka127@gmail.com">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    CAROLMUSYOKA127@GMAIL.COM
+  </a>
+</div>
+
+<!-- What I'm Offering -->
+<section class="pf-services">
   <div class="pf-section-header">
-    <span class="pf-section-tag">// tech_skills</span>
-    <h2 class="pf-section-title">What I Work With</h2>
+    <span class="pf-section-label">MY SERVICES</span>
+    <div class="pf-section-title-row">
+      <h2 class="pf-section-title">WHAT I'M<br>OFFERING</h2>
+      <div class="pf-section-right">
+        <p class="pf-section-desc">I build fast, beautiful Android applications with clean architecture, shipping to production since 2018.</p>
+        <a href="/contact/" class="pf-btn pf-btn-dark">ALL SERVICES</a>
+      </div>
+    </div>
   </div>
-  <div class="pf-skills-grid">
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #82aaff; --glow: rgba(130,170,255,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="14" y1="4" x2="10" y2="20"/></svg>
+  <div class="pf-services-grid">
+    <div class="pf-service-card pf-card-animate">
+      <div class="pf-service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
       </div>
-      <h3 class="pf-skill-title">Languages</h3>
-      <div class="pf-skill-tags">
-        <span>Kotlin</span><span>Java</span><span>TypeScript</span><span>C#</span><span>SQL</span><span>Dart</span>
-      </div>
+      <h3>ANDROID<br>DEVELOPMENT</h3>
+      <p>Native Android apps with Kotlin, Jetpack Compose, and Material 3. From concept to Play Store.</p>
+      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #addb67; --glow: rgba(173,219,103,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+    <div class="pf-service-card pf-card-animate">
+      <div class="pf-service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
       </div>
-      <h3 class="pf-skill-title">Mobile</h3>
-      <div class="pf-skill-tags">
-        <span>Jetpack Compose</span><span>Android SDK</span><span>Flutter</span><span>Material 3</span><span>AOSP</span>
-      </div>
+      <h3>ARCHITECTURE<br>&amp; SYSTEMS</h3>
+      <p>Clean Architecture, MVVM, MVI patterns. Scalable codebases that teams can maintain and grow.</p>
+      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #c792ea; --glow: rgba(199,146,234,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+    <div class="pf-service-card pf-card-animate">
+      <div class="pf-service-icon">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
       </div>
-      <h3 class="pf-skill-title">Architecture</h3>
-      <div class="pf-skill-tags">
-        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>SOLID</span><span>Hilt</span><span>Koin</span>
-      </div>
+      <h3>HARDWARE<br>&amp; IOT</h3>
+      <p>NFC, BLE, GPS, LiDAR, camera integrations. Bridging software and hardware for real-world impact.</p>
+      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #f78c6c; --glow: rgba(247,140,108,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-      </div>
-      <h3 class="pf-skill-title">Hardware</h3>
-      <div class="pf-skill-tags">
-        <span>NFC</span><span>BLE</span><span>GPS</span><span>LiDAR</span><span>Camera</span><span>IoT Sensors</span>
-      </div>
-    </div>
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #80cbc4; --glow: rgba(128,203,196,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
-      </div>
-      <h3 class="pf-skill-title">Networking</h3>
-      <div class="pf-skill-tags">
-        <span>REST</span><span>GraphQL</span><span>Retrofit</span><span>WebSockets</span><span>gRPC</span><span>Offline-first</span>
-      </div>
-    </div>
-
-    <div class="pf-skill-group pf-card-animate" style="--accent: #ffcb6b; --glow: rgba(255,203,107,0.12);">
-      <div class="pf-skill-top-border"></div>
-      <div class="pf-skill-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <h3 class="pf-skill-title">Testing & DevOps</h3>
-      <div class="pf-skill-tags">
-        <span>JUnit</span><span>Espresso</span><span>GitHub Actions</span><span>CircleCI</span><span>Datadog</span><span>Firebase</span>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- Featured Projects -->
+<!-- Experience -->
+<section class="pf-experience">
+  <div class="pf-section-header pf-section-header-centered">
+    <div class="pf-section-dot"></div>
+    <h2 class="pf-section-title pf-section-title-lg">EXPERIENCE</h2>
+    <div class="pf-section-lines">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="pf-experience-list">
+    <div class="pf-exp-item pf-card-animate">
+      <div class="pf-exp-left">
+        <h3 class="pf-exp-company">Senior Android Engineer</h3>
+        <p class="pf-exp-location">iKhokha &middot; South Africa</p>
+      </div>
+      <div class="pf-exp-right">
+        <span class="pf-exp-duration">JOB DURATION &middot; 2 YEARS</span>
+      </div>
+    </div>
+    <div class="pf-exp-detail pf-card-animate">
+      <p>Led Android payment app and SDK development serving 80,000+ merchants. Engineered NFC, BLE, and POS terminal integrations. Drove 60% transaction volume increase through Jetpack Compose features.</p>
+      <div class="pf-exp-tags">
+        <span>Kotlin</span><span>Compose</span><span>NFC</span><span>BLE</span><span>Datadog</span><span>CI/CD</span>
+      </div>
+    </div>
+
+    <div class="pf-exp-item pf-card-animate">
+      <div class="pf-exp-left">
+        <h3 class="pf-exp-company">Android Engineer</h3>
+        <p class="pf-exp-location">Engie Energy Access &middot; East &amp; West Africa</p>
+      </div>
+      <div class="pf-exp-right">
+        <span class="pf-exp-duration">JOB DURATION &middot; 2 YEARS</span>
+      </div>
+    </div>
+    <div class="pf-exp-detail pf-card-animate">
+      <p>Built MySolGo and MySolFix apps supporting 150,000+ solar energy customers. Optimized for low-bandwidth regions with offline-first architecture and intelligent caching.</p>
+      <div class="pf-exp-tags">
+        <span>Kotlin</span><span>Java</span><span>GraphQL</span><span>Room</span><span>Paging 3</span><span>WorkManager</span>
+      </div>
+    </div>
+
+    <div class="pf-exp-item pf-card-animate">
+      <div class="pf-exp-left">
+        <h3 class="pf-exp-company">Founding Android Engineer</h3>
+        <p class="pf-exp-location">Adanian Labs Africa</p>
+      </div>
+      <div class="pf-exp-right">
+        <span class="pf-exp-duration">JOB DURATION &middot; 1 YEAR</span>
+      </div>
+    </div>
+    <div class="pf-exp-detail pf-card-animate">
+      <p>Delivered 4 MVP Android apps for fintech and agritech startups including Paylend and Mamlaka, driving $200K+ in seed funding. Built offline-first delivery tracking with background location services.</p>
+      <div class="pf-exp-tags">
+        <span>Kotlin</span><span>Clean Architecture</span><span>Offline-first</span><span>Location Services</span>
+      </div>
+    </div>
+
+    <div class="pf-exp-item pf-card-animate">
+      <div class="pf-exp-left">
+        <h3 class="pf-exp-company">Software Engineer</h3>
+        <p class="pf-exp-location">Blue Ecoponicx</p>
+      </div>
+      <div class="pf-exp-right">
+        <span class="pf-exp-duration">JOB DURATION &middot; 3 YEARS</span>
+      </div>
+    </div>
+    <div class="pf-exp-detail pf-card-animate">
+      <p>Built core Android app components and IoT monitoring dashboards for 500+ hydroponic devices. Worked with device telemetry and real-time data in constrained environments.</p>
+      <div class="pf-exp-tags">
+        <span>Android</span><span>JavaScript</span><span>IoT</span><span>HTML5</span><span>CSS3</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Projects / Case Study -->
 <section class="pf-projects">
-  <div class="pf-section-header">
-    <span class="pf-section-tag">// featured_projects</span>
-    <h2 class="pf-section-title">What I've Built</h2>
+  <div class="pf-section-header pf-section-header-centered">
+    <div class="pf-section-dot"></div>
+    <h2 class="pf-section-title pf-section-title-lg">CASE STUDY</h2>
   </div>
 
   <div class="pf-projects-grid">
 
     <!-- Thamani -->
     <article class="pf-project-card pf-card-animate">
-      <div class="pf-card-glow"></div>
-      <div class="pf-card-content">
-        <div class="pf-card-header">
-          <div class="pf-app-icon pf-icon-thamani">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="12" fill="#1a3a2a"/>
-              <path d="M24 10L34 16V28L24 34L14 28V16L24 10Z" stroke="#7ec8a0" stroke-width="2" fill="none"/>
-              <path d="M24 18V30M19 21L24 18L29 21M19 27L24 30L29 27" stroke="#7ec8a0" stroke-width="1.5"/>
-              <circle cx="24" cy="24" r="3" fill="#7ec8a0" opacity="0.6"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="pf-card-title">Thamani</h3>
-            <span class="pf-card-type">Finance &middot; Android</span>
-          </div>
-          <div class="pf-card-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+      <div class="pf-project-image">
+        <div class="pf-project-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#f5f5f5"/>
+            <path d="M24 10L34 16V28L24 34L14 28V16L24 10Z" stroke="#000" stroke-width="2" fill="none"/>
+            <path d="M24 18V30M19 21L24 18L29 21M19 27L24 30L29 27" stroke="#000" stroke-width="1.5"/>
+            <circle cx="24" cy="24" r="3" fill="#000" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pf-project-info">
+        <span class="pf-project-tag">ANDROID</span>
+        <h3 class="pf-project-title">Transaction fee tracker for mobile money users.</h3>
+        <p class="pf-project-desc">Thamani reads your financial SMS and breaks down exactly what each transaction cost you — the fee, the percentage, and which provider is charging you the most. 100% on-device, no cloud sync.</p>
+        <div class="pf-project-tech">
+          <span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>MVVM</span><span>Material 3</span>
+        </div>
+        <div class="pf-project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.carolmusyoka.thamani" target="_blank" rel="noopener" class="pf-project-cta">
             Play Store
-          </div>
-        </div>
-        <p class="pf-card-desc">
-          Personal finance management app built with Kotlin and Jetpack Compose. Helps users track expenses, manage budgets, and gain insights into their spending patterns with intuitive visualizations and smart categorization.
-        </p>
-        <div class="pf-card-tech">
-          <span>Kotlin</span>
-          <span>Jetpack Compose</span>
-          <span>Room</span>
-          <span>MVVM</span>
-          <span>Material 3</span>
-        </div>
-        <div class="pf-card-links">
-          <a href="https://play.google.com/store/apps/details?id=com.carolmusyoka.thamani" target="_blank" rel="noopener" class="pf-btn pf-btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-            Get on Play Store
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </a>
-          <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            Source
-          </a>
+          <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-project-cta pf-project-cta-ghost">Source</a>
         </div>
       </div>
     </article>
 
     <!-- Cascade -->
     <article class="pf-project-card pf-card-animate">
-      <div class="pf-card-glow"></div>
-      <div class="pf-card-content">
-        <div class="pf-card-header">
-          <div class="pf-app-icon pf-icon-cascade">
-            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect width="48" height="48" rx="12" fill="#1a2a3a"/>
-              <path d="M14 14H34" stroke="#7ec8e8" stroke-width="2" stroke-linecap="round"/>
-              <path d="M14 20H30" stroke="#7ec8e8" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
-              <path d="M14 26H26" stroke="#7ec8e8" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
-              <path d="M14 32H22" stroke="#7ec8e8" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
-              <circle cx="34" cy="32" r="5" stroke="#7ec8e8" stroke-width="1.5" fill="none"/>
-              <path d="M32 32L34 34L37 30" stroke="#7ec8e8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div>
-            <h3 class="pf-card-title">Cascade</h3>
-            <span class="pf-card-type">Productivity &middot; Android</span>
-          </div>
-          <div class="pf-card-badge">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
+      <div class="pf-project-image">
+        <div class="pf-project-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#f5f5f5"/>
+            <path d="M15 8C15 8 14 8 14 9V39C14 40 15 40 15 40" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M33 8C33 8 34 8 34 9V39C34 40 33 40 33 40" stroke="#000" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M15 8H33M15 40H33" stroke="#000" stroke-width="1.5"/>
+            <line x1="18" y1="15" x2="30" y2="15" stroke="#000" stroke-width="1" opacity="0.3"/>
+            <line x1="18" y1="19" x2="28" y2="19" stroke="#000" stroke-width="1" opacity="0.2"/>
+            <line x1="18" y1="23" x2="30" y2="23" stroke="#000" stroke-width="1" opacity="0.3"/>
+            <line x1="18" y1="27" x2="26" y2="27" stroke="#000" stroke-width="1" opacity="0.2"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pf-project-info">
+        <span class="pf-project-tag">ANDROID</span>
+        <h3 class="pf-project-title">A distraction-free EPUB reader for book lovers.</h3>
+        <p class="pf-project-desc">No sign-up, no tracking, no third-party services. Beautiful by design — a carefully crafted interface that makes reading feel calm. Works fully offline with books staying on device.</p>
+        <div class="pf-project-tech">
+          <span>Kotlin</span><span>Jetpack Compose</span><span>EPUB Parsing</span><span>Room</span><span>Clean Architecture</span>
+        </div>
+        <div class="pf-project-links">
+          <a href="https://play.google.com/store/apps/details?id=com.carolmusyoka.cascade" target="_blank" rel="noopener" class="pf-project-cta">
             Play Store
-          </div>
-        </div>
-        <p class="pf-card-desc">
-          A clean, cascading task and note-taking app designed to help organize thoughts and workflows. Built with modern Android architecture, featuring offline-first design, smooth animations, and an elegant material interface.
-        </p>
-        <div class="pf-card-tech">
-          <span>Kotlin</span>
-          <span>Jetpack Compose</span>
-          <span>Coroutines</span>
-          <span>Flow</span>
-          <span>Clean Architecture</span>
-        </div>
-        <div class="pf-card-links">
-          <a href="https://play.google.com/store/apps/details?id=com.carolmusyoka.cascade" target="_blank" rel="noopener" class="pf-btn pf-btn-primary">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-            Get on Play Store
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </a>
-          <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            Source
+          <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-project-cta pf-project-cta-ghost">Source</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Sokompare -->
+    <article class="pf-project-card pf-card-animate">
+      <div class="pf-project-image">
+        <div class="pf-project-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="48" height="48" rx="12" fill="#f5f5f5"/>
+            <path d="M12 30L18 22L24 26L30 16L36 20" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="18" cy="22" r="2.5" fill="#000" opacity="0.3"/>
+            <circle cx="30" cy="16" r="2.5" fill="#000" opacity="0.3"/>
+            <circle cx="36" cy="20" r="2.5" fill="#000" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="pf-project-info">
+        <span class="pf-project-tag">WEB APP</span>
+        <h3 class="pf-project-title">Smart price comparison with ML-powered predictions.</h3>
+        <p class="pf-project-desc">Aggregates product prices across multiple retailers and uses machine learning to predict price trends. Helps users find deals, track history, and get notified when prices drop.</p>
+        <div class="pf-project-tech">
+          <span>Python</span><span>scikit-learn</span><span>React</span><span>Next.js</span><span>Vercel</span>
+        </div>
+        <div class="pf-project-links">
+          <a href="https://sokompare.vercel.app/" target="_blank" rel="noopener" class="pf-project-cta">
+            View Live
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </a>
+          <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-project-cta pf-project-cta-ghost">Source</a>
         </div>
       </div>
     </article>
@@ -265,98 +375,60 @@
   </div>
 </section>
 
-<!-- Professional Work -->
-<section class="pf-work">
+<!-- Skills -->
+<section class="pf-skills">
   <div class="pf-section-header">
-    <span class="pf-section-tag">// professional_work</span>
-    <h2 class="pf-section-title">Where I've Shipped</h2>
+    <span class="pf-section-label">TECH STACK</span>
+    <h2 class="pf-section-title">WHAT I WORK WITH</h2>
   </div>
-
-  <div class="pf-work-timeline">
-
-    <div class="pf-work-item pf-card-animate">
-      <div class="pf-work-dot"></div>
-      <div class="pf-work-content">
-        <div class="pf-work-meta">
-          <span class="pf-work-company">iKhokha</span>
-          <span class="pf-work-period">2023 — 2025</span>
-        </div>
-        <h3 class="pf-work-role">Senior Android Engineer</h3>
-        <p class="pf-work-desc">Led Android payment app and SDK development serving 80,000+ merchants across South Africa. Engineered NFC, BLE, and POS terminal integrations. Drove 60% transaction volume increase through Jetpack Compose features.</p>
-        <div class="pf-card-tech">
-          <span>Kotlin</span><span>Compose</span><span>NFC</span><span>BLE</span><span>Datadog</span><span>CI/CD</span>
-        </div>
+  <div class="pf-skills-grid">
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Languages</h3>
+      <div class="pf-skill-tags">
+        <span>Kotlin</span><span>Java</span><span>TypeScript</span><span>C#</span><span>SQL</span><span>Dart</span>
       </div>
     </div>
-
-    <div class="pf-work-item pf-card-animate">
-      <div class="pf-work-dot"></div>
-      <div class="pf-work-content">
-        <div class="pf-work-meta">
-          <span class="pf-work-company">Engie Energy Access</span>
-          <span class="pf-work-period">2022 — 2024</span>
-        </div>
-        <h3 class="pf-work-role">Android Engineer</h3>
-        <p class="pf-work-desc">Built MySolGo and MySolFix apps supporting 150,000+ solar energy customers across East and West Africa. Optimized for low-bandwidth regions with offline-first architecture and intelligent caching.</p>
-        <div class="pf-card-tech">
-          <span>Kotlin</span><span>Java</span><span>GraphQL</span><span>Room</span><span>Paging 3</span><span>WorkManager</span>
-        </div>
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Mobile</h3>
+      <div class="pf-skill-tags">
+        <span>Jetpack Compose</span><span>Android SDK</span><span>Flutter</span><span>Material 3</span><span>AOSP</span>
       </div>
     </div>
-
-    <div class="pf-work-item pf-card-animate">
-      <div class="pf-work-dot"></div>
-      <div class="pf-work-content">
-        <div class="pf-work-meta">
-          <span class="pf-work-company">Adanian Labs Africa</span>
-          <span class="pf-work-period">2021 — 2022</span>
-        </div>
-        <h3 class="pf-work-role">Founding Android Engineer</h3>
-        <p class="pf-work-desc">Delivered 4 MVP Android apps for fintech and agritech startups including Paylend and Mamlaka, driving $200K+ in seed funding. Built offline-first delivery tracking with background location services.</p>
-        <div class="pf-card-tech">
-          <span>Kotlin</span><span>Clean Architecture</span><span>Offline-first</span><span>Location Services</span>
-        </div>
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Architecture</h3>
+      <div class="pf-skill-tags">
+        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>SOLID</span><span>Hilt</span><span>Koin</span>
       </div>
     </div>
-
-    <div class="pf-work-item pf-card-animate">
-      <div class="pf-work-dot"></div>
-      <div class="pf-work-content">
-        <div class="pf-work-meta">
-          <span class="pf-work-company">Blue Ecoponicx</span>
-          <span class="pf-work-period">2018 — 2021</span>
-        </div>
-        <h3 class="pf-work-role">Software Engineer</h3>
-        <p class="pf-work-desc">Built core Android app components and IoT monitoring dashboards for 500+ hydroponic devices. Worked with device telemetry and real-time data in constrained environments.</p>
-        <div class="pf-card-tech">
-          <span>Android</span><span>JavaScript</span><span>IoT</span><span>HTML5</span><span>CSS3</span>
-        </div>
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Hardware</h3>
+      <div class="pf-skill-tags">
+        <span>NFC</span><span>BLE</span><span>GPS</span><span>LiDAR</span><span>Camera</span><span>IoT Sensors</span>
       </div>
     </div>
-
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Networking</h3>
+      <div class="pf-skill-tags">
+        <span>REST</span><span>GraphQL</span><span>Retrofit</span><span>WebSockets</span><span>gRPC</span><span>Offline-first</span>
+      </div>
+    </div>
+    <div class="pf-skill-group pf-card-animate">
+      <h3 class="pf-skill-title">Testing & DevOps</h3>
+      <div class="pf-skill-tags">
+        <span>JUnit</span><span>Espresso</span><span>GitHub Actions</span><span>CircleCI</span><span>Datadog</span><span>Firebase</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="pf-cta">
   <div class="pf-cta-inner">
-    <span class="pf-section-tag">// let's_connect</span>
-    <h2 class="pf-cta-title">Got an idea? Let's build it.</h2>
+    <h2 class="pf-cta-title">Got an idea?<br>Let's build it.</h2>
     <p class="pf-cta-text">I'm always interested in challenging Android projects and new opportunities to create impactful mobile experiences.</p>
     <div class="pf-cta-links">
       <a href="/contact/" class="pf-btn pf-btn-primary pf-btn-lg">Get in Touch</a>
-      <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost pf-btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-        GitHub
-      </a>
-      <a href="https://play.google.com/store/apps/developer?id=carolmusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost pf-btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/></svg>
-        Play Store
-      </a>
-      <a href="https://www.linkedin.com/in/carol-musyoka/" target="_blank" rel="noopener" class="pf-btn pf-btn-ghost pf-btn-lg">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
+      <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-btn pf-btn-outline pf-btn-lg">GitHub</a>
     </div>
   </div>
 </section>
