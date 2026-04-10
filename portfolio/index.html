@@ -53,19 +53,52 @@
 
 
   <main>
-    <!-- Hero -->
+    <!-- Hand-drawn arrow SVG defs (reusable) -->
+<svg class="pf-arrow-defs" xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;">
+  <defs>
+    <symbol id="arrow-curve-right" viewBox="0 0 120 60">
+      <path d="M10 50 C30 50, 40 10, 80 15 S110 30, 110 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M102 18 L112 25 L100 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-wave" viewBox="0 0 140 40">
+      <path d="M10 20 C25 8, 35 32, 50 20 S75 8, 90 20 S115 32, 130 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M122 14 L132 20 L122 26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-swoop-down" viewBox="0 0 80 100">
+      <path d="M15 10 C15 10, 60 10, 55 50 S30 85, 45 90" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M38 82 L46 92 L52 82" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-loop" viewBox="0 0 100 80">
+      <path d="M10 60 C10 20, 50 5, 60 25 S50 55, 70 45 L90 35" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M82 28 L92 35 L84 42" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-zigzag" viewBox="0 0 120 50">
+      <path d="M10 40 L35 10 L60 40 L85 10 L110 30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M102 23 L112 30 L104 37" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="arrow-straight" viewBox="0 0 140 10">
+      <path d="M10 5 L120 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M112 0 L122 5 L112 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Hero -->
 <section class="pf-hero">
+  <!-- Decorative arrows -->
+  <svg class="pf-arrow pf-arrow-hero-1" width="120" height="60"><use href="#arrow-curve-right"/></svg>
+  <svg class="pf-arrow pf-arrow-hero-2" width="80" height="100"><use href="#arrow-swoop-down"/></svg>
   <div class="pf-hero-inner">
     <div class="pf-hero-text">
       <p class="pf-hero-greeting">Hello!</p>
       <h1 class="pf-hero-name">I'm <strong>Carol</strong></h1>
       <div class="pf-hero-role">
         <span class="pf-role-line"></span>
-        <span>Android Engineer</span>
+        <span>Senior Android Engineer</span>
         <span class="pf-role-star">&#10038;</span>
       </div>
       <p class="pf-hero-bio">
-        Hello! I'm a <strong>mobile-first builder</strong>, Android engineer,
+        I'm a <strong>Senior Android Engineer</strong>, multiplatform builder,
         clean architecture advocate &amp; human-loving introvert
       </p>
       <ul class="pf-hero-values">
@@ -110,9 +143,11 @@
   <div class="pf-expertise-inner">
     <span class="pf-expertise-pill">Android</span>
     <span class="pf-expertise-pill">Kotlin</span>
+    <span class="pf-expertise-pill">Swift</span>
+    <span class="pf-expertise-pill">KMP</span>
     <span class="pf-expertise-pill">Jetpack Compose</span>
+    <span class="pf-expertise-pill">Compose Multiplatform</span>
     <span class="pf-expertise-pill">Clean Architecture</span>
-    <span class="pf-expertise-pill">Mobile</span>
     <span class="pf-expertise-pill">Offline-First</span>
     <span class="pf-expertise-pill">NFC &amp; BLE</span>
     <span class="pf-expertise-pill">Material Design</span>
@@ -140,15 +175,14 @@
   </a>
 </div>
 
-<!-- What I'm Offering -->
+<!-- What I Do -->
 <section class="pf-services">
   <div class="pf-section-header">
-    <span class="pf-section-label">MY SERVICES</span>
+    <span class="pf-section-label">WHAT I DO</span>
     <div class="pf-section-title-row">
-      <h2 class="pf-section-title">WHAT I'M<br>OFFERING</h2>
+      <h2 class="pf-section-title">HOW I<br>BUILD <svg class="pf-arrow-inline" width="100" height="80"><use href="#arrow-loop"/></svg></h2>
       <div class="pf-section-right">
-        <p class="pf-section-desc">I build fast, beautiful Android applications with clean architecture, shipping to production since 2018.</p>
-        <a href="/contact/" class="pf-btn pf-btn-dark">ALL SERVICES</a>
+        <p class="pf-section-desc">End-to-end Android development — from architecture design and UI implementation to CI/CD pipelines, Play Store deployment, and production monitoring. Shipping since 2018.</p>
       </div>
     </div>
   </div>
@@ -157,25 +191,25 @@
       <div class="pf-service-icon">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
       </div>
-      <h3>ANDROID<br>DEVELOPMENT</h3>
-      <p>Native Android apps with Kotlin, Jetpack Compose, and Material 3. From concept to Play Store.</p>
-      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <h3>NATIVE ANDROID<br>&amp; MULTIPLATFORM</h3>
+      <p>Production Android apps in Kotlin with Jetpack Compose, Material 3, and reactive state management via Coroutines &amp; Flow. Currently building with Kotlin Multiplatform (KMP) and Compose Multiplatform for shared business logic across Android and iOS.</p>
+      <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-service-link">SEE WORK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="pf-service-card pf-card-animate">
       <div class="pf-service-icon">
         <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>
       </div>
-      <h3>ARCHITECTURE<br>&amp; SYSTEMS</h3>
-      <p>Clean Architecture, MVVM, MVI patterns. Scalable codebases that teams can maintain and grow.</p>
-      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <h3>ARCHITECTURE<br>&amp; RELIABILITY</h3>
+      <p>Clean Architecture with MVVM/MVI, repository patterns, and SOLID principles. Dependency injection with Hilt and Koin. Offline-first data persistence with Room, intelligent caching, and sync strategies for low-bandwidth environments.</p>
+      <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-service-link">SEE WORK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
     <div class="pf-service-card pf-card-animate">
       <div class="pf-service-icon">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
       </div>
-      <h3>HARDWARE<br>&amp; IOT</h3>
-      <p>NFC, BLE, GPS, LiDAR, camera integrations. Bridging software and hardware for real-world impact.</p>
-      <a href="#" class="pf-service-link">READ MORE <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <h3>HARDWARE, PAYMENTS<br>&amp; DEVOPS</h3>
+      <p>Secure payment integrations with NFC, BLE, and POS terminals. Automated CI/CD with GitHub Actions for multi-channel deployment (Play Store, Huawei AppGallery, Sunmi Store). Observability with Datadog, Firebase Crashlytics, and Mixpanel.</p>
+      <a href="https://github.com/carolinemusyoka" target="_blank" rel="noopener" class="pf-service-link">SEE WORK <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
     </div>
   </div>
 </section>
@@ -185,9 +219,7 @@
   <div class="pf-section-header pf-section-header-centered">
     <div class="pf-section-dot"></div>
     <h2 class="pf-section-title pf-section-title-lg">EXPERIENCE</h2>
-    <div class="pf-section-lines">
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
+    <svg class="pf-arrow-section" width="140" height="40"><use href="#arrow-wave"/></svg>
   </div>
 
   <div class="pf-experience-list">
@@ -257,11 +289,13 @@
   </div>
 </section>
 
-<!-- Featured Projects / Case Study -->
+<!-- Projects -->
 <section class="pf-projects">
   <div class="pf-section-header pf-section-header-centered">
     <div class="pf-section-dot"></div>
-    <h2 class="pf-section-title pf-section-title-lg">CASE STUDY</h2>
+    <h2 class="pf-section-title pf-section-title-lg">PROJECTS</h2>
+    <svg class="pf-arrow-section" width="120" height="50"><use href="#arrow-zigzag"/></svg>
+    <p class="pf-section-subtitle">Things I've built and am currently working on</p>
   </div>
 
   <div class="pf-projects-grid">
@@ -280,10 +314,10 @@
       </div>
       <div class="pf-project-info">
         <span class="pf-project-tag">ANDROID</span>
-        <h3 class="pf-project-title">Transaction fee tracker for mobile money users.</h3>
-        <p class="pf-project-desc">Thamani reads your financial SMS and breaks down exactly what each transaction cost you — the fee, the percentage, and which provider is charging you the most. 100% on-device, no cloud sync.</p>
+        <h3 class="pf-project-title">Thamani — Transaction fee tracker for mobile money.</h3>
+        <p class="pf-project-desc">Every time you send money, pay a bill, or withdraw cash on M-Pesa, Airtel Money, or your bank — you pay a fee. Most people never add it up. Thamani reads your financial SMS messages and breaks down exactly what each transaction cost you: the fee, the percentage, and which provider is charging you the most. 100% on-device, zero cloud sync.</p>
         <div class="pf-project-tech">
-          <span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>MVVM</span><span>Material 3</span>
+          <span>Kotlin</span><span>Jetpack Compose</span><span>Room</span><span>MVVM</span><span>Material 3</span><span>SMS Parsing</span>
         </div>
         <div class="pf-project-links">
           <a href="https://play.google.com/store/apps/details?id=com.carolmusyoka.thamani" target="_blank" rel="noopener" class="pf-project-cta">
@@ -313,8 +347,8 @@
       </div>
       <div class="pf-project-info">
         <span class="pf-project-tag">ANDROID</span>
-        <h3 class="pf-project-title">A distraction-free EPUB reader for book lovers.</h3>
-        <p class="pf-project-desc">No sign-up, no tracking, no third-party services. Beautiful by design — a carefully crafted interface that makes reading feel calm. Works fully offline with books staying on device.</p>
+        <h3 class="pf-project-title">Cascade — A distraction-free EPUB reader.</h3>
+        <p class="pf-project-desc">No sign-up, no tracking, no third-party services. A carefully crafted reading interface that feels calm and enjoyable. Custom themes, fonts, spacing, bookmarks, notes, and progress tracking. Works 100% offline — your books never leave your device.</p>
         <div class="pf-project-tech">
           <span>Kotlin</span><span>Jetpack Compose</span><span>EPUB Parsing</span><span>Room</span><span>Clean Architecture</span>
         </div>
@@ -343,10 +377,10 @@
       </div>
       <div class="pf-project-info">
         <span class="pf-project-tag">WEB APP</span>
-        <h3 class="pf-project-title">Smart price comparison with ML-powered predictions.</h3>
-        <p class="pf-project-desc">Aggregates product prices across multiple retailers and uses machine learning to predict price trends. Helps users find deals, track history, and get notified when prices drop.</p>
+        <h3 class="pf-project-title">Sokompare — ML-powered price comparison.</h3>
+        <p class="pf-project-desc">A smart price comparison platform that aggregates product prices across multiple online retailers and uses Python-powered machine learning to predict price trends. Helps users find the best deals, track price history, and get notified when prices drop.</p>
         <div class="pf-project-tech">
-          <span>Python</span><span>scikit-learn</span><span>React</span><span>Next.js</span><span>Vercel</span>
+          <span>Python</span><span>scikit-learn</span><span>React</span><span>Next.js</span><span>Vercel</span><span>REST API</span>
         </div>
         <div class="pf-project-links">
           <a href="https://sokompare.vercel.app/" target="_blank" rel="noopener" class="pf-project-cta">
@@ -358,6 +392,29 @@
       </div>
     </article>
 
+  </div>
+
+  <!-- Currently Working On -->
+  <div class="pf-wip">
+    <h3 class="pf-wip-title">Currently Working On</h3>
+    <div class="pf-wip-grid">
+      <div class="pf-wip-card pf-card-animate">
+        <span class="pf-wip-badge">IN PROGRESS</span>
+        <h4>KMP Shared Library</h4>
+        <p>Building a Kotlin Multiplatform library for shared business logic across Android and iOS — networking, data persistence, and domain models in one codebase with Compose Multiplatform UI.</p>
+        <div class="pf-project-tech">
+          <span>Kotlin Multiplatform</span><span>Compose Multiplatform</span><span>Ktor</span><span>SQLDelight</span>
+        </div>
+      </div>
+      <div class="pf-wip-card pf-card-animate">
+        <span class="pf-wip-badge">IN PROGRESS</span>
+        <h4>Swift &amp; iOS Exploration</h4>
+        <p>Expanding into native iOS development with Swift and SwiftUI. Building complementary iOS counterparts to existing Android apps and exploring platform-specific patterns and APIs.</p>
+        <div class="pf-project-tech">
+          <span>Swift</span><span>SwiftUI</span><span>UIKit</span><span>Xcode</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -371,37 +428,37 @@
     <div class="pf-skill-group pf-card-animate">
       <h3 class="pf-skill-title">Languages</h3>
       <div class="pf-skill-tags">
-        <span>Kotlin</span><span>Java</span><span>TypeScript</span><span>C#</span><span>SQL</span><span>Dart</span>
+        <span>Kotlin</span><span>Java</span><span>Swift</span><span>TypeScript</span><span>C#</span><span>SQL</span><span>Dart</span>
       </div>
     </div>
     <div class="pf-skill-group pf-card-animate">
-      <h3 class="pf-skill-title">Mobile</h3>
+      <h3 class="pf-skill-title">Mobile &amp; Multiplatform</h3>
       <div class="pf-skill-tags">
-        <span>Jetpack Compose</span><span>Android SDK</span><span>Flutter</span><span>Material 3</span><span>AOSP</span>
+        <span>Jetpack Compose</span><span>Android SDK</span><span>AOSP</span><span>KMP</span><span>Compose Multiplatform</span><span>SwiftUI</span><span>Flutter</span><span>Material 3</span>
       </div>
     </div>
     <div class="pf-skill-group pf-card-animate">
-      <h3 class="pf-skill-title">Architecture</h3>
+      <h3 class="pf-skill-title">Architecture &amp; State</h3>
       <div class="pf-skill-tags">
-        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>SOLID</span><span>Hilt</span><span>Koin</span>
+        <span>MVVM</span><span>MVI</span><span>Clean Architecture</span><span>SOLID</span><span>Hilt</span><span>Koin</span><span>Coroutines &amp; Flow</span><span>LiveData</span>
       </div>
     </div>
     <div class="pf-skill-group pf-card-animate">
-      <h3 class="pf-skill-title">Hardware</h3>
+      <h3 class="pf-skill-title">Hardware &amp; Payments</h3>
       <div class="pf-skill-tags">
-        <span>NFC</span><span>BLE</span><span>GPS</span><span>LiDAR</span><span>Camera</span><span>IoT Sensors</span>
+        <span>NFC</span><span>BLE</span><span>GPS</span><span>LiDAR</span><span>Camera</span><span>POS Terminals</span><span>IoT Sensors</span>
       </div>
     </div>
     <div class="pf-skill-group pf-card-animate">
-      <h3 class="pf-skill-title">Networking</h3>
+      <h3 class="pf-skill-title">Networking &amp; Data</h3>
       <div class="pf-skill-tags">
-        <span>REST</span><span>GraphQL</span><span>Retrofit</span><span>WebSockets</span><span>gRPC</span><span>Offline-first</span>
+        <span>REST</span><span>GraphQL</span><span>Retrofit</span><span>Ktor</span><span>WebSockets</span><span>gRPC</span><span>Room</span><span>SQLDelight</span><span>Offline-first</span>
       </div>
     </div>
     <div class="pf-skill-group pf-card-animate">
-      <h3 class="pf-skill-title">Testing & DevOps</h3>
+      <h3 class="pf-skill-title">Testing &amp; DevOps</h3>
       <div class="pf-skill-tags">
-        <span>JUnit</span><span>Espresso</span><span>GitHub Actions</span><span>CircleCI</span><span>Datadog</span><span>Firebase</span>
+        <span>JUnit</span><span>MockK</span><span>Espresso</span><span>Robolectric</span><span>TDD</span><span>GitHub Actions</span><span>CircleCI</span><span>Bitrise</span><span>Datadog</span><span>Firebase</span>
       </div>
     </div>
   </div>
@@ -410,6 +467,7 @@
 <!-- CTA -->
 <section class="pf-cta">
   <div class="pf-cta-inner">
+    <svg class="pf-arrow-cta" width="120" height="60"><use href="#arrow-curve-right"/></svg>
     <h2 class="pf-cta-title">Got an idea?<br>Let's build it.</h2>
     <p class="pf-cta-text">I'm always interested in challenging Android projects and new opportunities to create impactful mobile experiences.</p>
     <div class="pf-cta-links">
