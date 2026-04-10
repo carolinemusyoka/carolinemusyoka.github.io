@@ -4035,36 +4035,37 @@ img {
   flex-wrap: wrap;
 }
 
-/* Hero image */
+/* Hero image — floating, no frame */
 .pf-hero-image {
   display: flex;
   justify-content: center;
-}
-
-.pf-image-frame {
   position: relative;
-  width: 380px;
-  height: 460px;
-  border-radius: 24px;
-  overflow: hidden;
 }
 
-.pf-image-frame img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: grayscale(20%);
-  transition: filter 0.5s ease, transform 0.5s ease;
+.pf-floating-img {
+  width: 420px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(15%);
+  transition: filter 0.6s ease, transform 0.6s ease;
+  transform-origin: bottom center;
+  animation: pf-float 4s ease-in-out infinite;
 }
 
-.pf-image-frame:hover img {
+.pf-floating-img:hover {
   filter: grayscale(0%);
-  transform: scale(1.03);
+  transform: scale(1.02);
+  animation-play-state: paused;
+}
+
+@keyframes pf-float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
 }
 
 .pf-image-badge {
   position: absolute;
-  bottom: 1.5rem;
+  bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
   background: #1a1a1a;
@@ -4077,6 +4078,7 @@ img {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  z-index: 2;
 }
 
 .pf-typed-text {
@@ -4131,43 +4133,38 @@ img {
   margin-top: 0.3rem;
 }
 
-/* --- Marquee --- */
-.pf-marquee {
+/* --- Expertise Strip --- */
+.pf-expertise-strip {
   background: #1a1a1a;
-  padding: 1rem 0;
-  overflow: hidden;
-  white-space: nowrap;
+  padding: 1.2rem 2rem;
 }
 
-.pf-marquee-track {
+.pf-expertise-inner {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
-  width: max-content;
-  animation: pf-scroll 25s linear infinite;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
 }
 
-.pf-marquee-content {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  padding: 0 1rem;
-}
-
-.pf-marquee-content span {
-  font-family: var(--font-display);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+.pf-expertise-pill {
+  font-size: 0.78rem;
   font-weight: 500;
-  color: #ffffff;
-  letter-spacing: 0.08em;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.06em;
+  padding: 0.45rem 1.1rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  cursor: default;
 }
 
-.pf-marquee-dot {
-  font-size: 0.7rem !important;
-  opacity: 0.4;
-}
-
-@keyframes pf-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.pf-expertise-pill:hover {
+  color: #1a1a1a;
+  background: #ffffff;
+  border-color: #ffffff;
+  transform: translateY(-2px);
 }
 
 /* --- Social Bar --- */
@@ -4842,9 +4839,8 @@ img {
     display: inline-block;
   }
 
-  .pf-image-frame {
-    width: 280px;
-    height: 340px;
+  .pf-floating-img {
+    width: 300px;
   }
 
   .pf-section-title-row {
@@ -4913,7 +4909,8 @@ img {
     grid-template-columns: 1fr;
   }
 
-  .pf-marquee-content span {
-    font-size: 0.85rem;
+  .pf-expertise-pill {
+    font-size: 0.72rem;
+    padding: 0.35rem 0.85rem;
   }
 }
