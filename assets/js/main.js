@@ -245,14 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Portfolio page animations ---
   if (document.body.classList.contains('portfolio-page')) {
 
-    // Typing effect
+    // Typing effect in hero badge
     const typedEl = document.getElementById('pf-typed');
     if (typedEl) {
       const phrases = [
-        'carol.buildApp("android")',
-        'deploy --target playstore',
-        'git push origin main',
-        'gradle assembleRelease'
+        'Hello',
+        'Kotlin lover',
+        'Building for Android',
+        'Shipping to Play Store'
       ];
       let phraseIdx = 0;
       let charIdx = 0;
@@ -266,9 +266,9 @@ document.addEventListener('DOMContentLoaded', () => {
           charIdx++;
           if (charIdx === current.length) {
             deleting = true;
-            pauseTime = 2000;
+            pauseTime = 2200;
           } else {
-            pauseTime = 60 + Math.random() * 40;
+            pauseTime = 70 + Math.random() * 40;
           }
         } else {
           typedEl.textContent = current.substring(0, charIdx - 1);
@@ -276,9 +276,9 @@ document.addEventListener('DOMContentLoaded', () => {
           if (charIdx === 0) {
             deleting = false;
             phraseIdx = (phraseIdx + 1) % phrases.length;
-            pauseTime = 400;
+            pauseTime = 500;
           } else {
-            pauseTime = 30;
+            pauseTime = 35;
           }
         }
         setTimeout(typeLoop, pauseTime);
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', () => {
       pfStats.forEach(el => pfObserver.observe(el));
     }
 
-    // Card scroll-in animations
+    // Card scroll-in animations with stagger
     const pfCards = document.querySelectorAll('.pf-card-animate');
     if (pfCards.length && 'IntersectionObserver' in window) {
       const cardObserver = new IntersectionObserver((entries) => {
@@ -318,13 +318,13 @@ document.addEventListener('DOMContentLoaded', () => {
           if (entry.isIntersecting) {
             setTimeout(() => {
               entry.target.classList.add('pf-visible');
-            }, i * 120);
+            }, i * 100);
             cardObserver.unobserve(entry.target);
           }
         });
-      }, { threshold: 0.1 });
+      }, { threshold: 0.08 });
       pfCards.forEach((el, i) => {
-        el.style.transitionDelay = `${i * 0.08}s`;
+        el.style.transitionDelay = `${i * 0.06}s`;
         cardObserver.observe(el);
       });
     }
