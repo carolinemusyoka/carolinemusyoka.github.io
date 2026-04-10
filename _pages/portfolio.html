@@ -34,12 +34,10 @@ body_class: portfolio-page
       </div>
     </div>
     <div class="pf-hero-image">
-      <div class="pf-image-frame">
-        <img src="{{ site.author.avatar }}" alt="Carol Musyoka" loading="eager">
-        <div class="pf-image-badge">
-          <span class="pf-typed-text" id="pf-typed"></span>
-          <span class="pf-cursor">|</span>
-        </div>
+      <img src="{{ '/assets/images/avatar.png' | relative_url }}" alt="Carol Musyoka" class="pf-floating-img" loading="eager">
+      <div class="pf-image-badge">
+        <span class="pf-typed-text" id="pf-typed"></span>
+        <span class="pf-cursor">|</span>
       </div>
     </div>
   </div>
@@ -59,29 +57,17 @@ body_class: portfolio-page
   </div>
 </section>
 
-<!-- Scrolling Marquee -->
-<div class="pf-marquee">
-  <div class="pf-marquee-track">
-    <div class="pf-marquee-content">
-      <span>ANDROID</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>KOTLIN</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>JETPACK COMPOSE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>CLEAN ARCHITECTURE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>MOBILE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>OFFLINE-FIRST</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>NFC &amp; BLE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>MATERIAL DESIGN</span><span class="pf-marquee-dot">&#10038;</span>
-    </div>
-    <div class="pf-marquee-content" aria-hidden="true">
-      <span>ANDROID</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>KOTLIN</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>JETPACK COMPOSE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>CLEAN ARCHITECTURE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>MOBILE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>OFFLINE-FIRST</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>NFC &amp; BLE</span><span class="pf-marquee-dot">&#10038;</span>
-      <span>MATERIAL DESIGN</span><span class="pf-marquee-dot">&#10038;</span>
-    </div>
+<!-- Expertise Strip -->
+<div class="pf-expertise-strip">
+  <div class="pf-expertise-inner">
+    <span class="pf-expertise-pill">Android</span>
+    <span class="pf-expertise-pill">Kotlin</span>
+    <span class="pf-expertise-pill">Jetpack Compose</span>
+    <span class="pf-expertise-pill">Clean Architecture</span>
+    <span class="pf-expertise-pill">Mobile</span>
+    <span class="pf-expertise-pill">Offline-First</span>
+    <span class="pf-expertise-pill">NFC &amp; BLE</span>
+    <span class="pf-expertise-pill">Material Design</span>
   </div>
 </div>
 
