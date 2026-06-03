@@ -17,8 +17,8 @@
   --color-text: #e8e8e8;
   --color-text-muted: #888888;
   --color-text-dim: #555555;
-  --color-accent: #c9a96e;
-  --color-accent-hover: #dfc08a;
+  --color-accent: #3a8cc2;
+  --color-accent-hover: #62a8d8;
   --color-white: #ffffff;
   --color-border: #222222;
   --font-display: 'Playfair Display', Georgia, serif;
@@ -465,9 +465,9 @@ img {
 }
 
 .story-tag--travel {
-  background: rgba(201, 169, 110, 0.2);
+  background: rgba(58, 140, 194, 0.2);
   color: var(--color-accent);
-  border-color: rgba(201, 169, 110, 0.25);
+  border-color: rgba(58, 140, 194, 0.25);
 }
 
 .story-tag--guide {
@@ -680,7 +680,7 @@ img {
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent);
-  background: rgba(201, 169, 110, 0.1);
+  background: rgba(58, 140, 194, 0.1);
   padding: 0.3rem 0.8rem;
   border-radius: 2px;
 }
@@ -1002,8 +1002,8 @@ img {
 
 .place-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(201, 169, 110, 0.3);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(201, 169, 110, 0.1);
+  border-color: rgba(58, 140, 194, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(58, 140, 194, 0.1);
 }
 
 .place-card-visual {
@@ -1039,7 +1039,7 @@ img {
 }
 
 .place-badge--stay {
-  background: rgba(201, 169, 110, 0.25);
+  background: rgba(58, 140, 194, 0.25);
   color: var(--color-accent);
 }
 
@@ -1179,7 +1179,7 @@ img {
   -webkit-backdrop-filter: blur(8px);
 }
 
-.place-badge--stay { background: rgba(201, 169, 110, 0.2); color: var(--color-accent); }
+.place-badge--stay { background: rgba(58, 140, 194, 0.2); color: var(--color-accent); }
 .place-badge--see { background: rgba(110, 160, 201, 0.2); color: #6ea0c9; }
 .place-badge--eat { background: rgba(201, 130, 110, 0.2); color: #c9826e; }
 .place-badge--chill { background: rgba(130, 201, 150, 0.2); color: #82c996; }
@@ -1265,7 +1265,7 @@ img {
   width: 36px;
   height: 36px;
   border-radius: 8px;
-  background: rgba(201, 169, 110, 0.1);
+  background: rgba(58, 140, 194, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1726,7 +1726,7 @@ img {
 
 .day-city-tab.active {
   border-color: var(--color-accent);
-  background: rgba(201, 169, 110, 0.1);
+  background: rgba(58, 140, 194, 0.1);
 }
 
 .day-city-name {
@@ -1885,7 +1885,7 @@ img {
 }
 
 .day-spot:hover {
-  border-color: rgba(201, 169, 110, 0.3);
+  border-color: rgba(58, 140, 194, 0.3);
 }
 
 .day-spot-image {
@@ -1991,7 +1991,7 @@ img {
 }
 
 .lifestyle-card:hover {
-  border-color: rgba(201, 169, 110, 0.3);
+  border-color: rgba(58, 140, 194, 0.3);
 }
 
 .lifestyle-card-icon {
@@ -3031,7 +3031,7 @@ img {
   display: inline-flex;
   align-items: center;
   gap: 1rem;
-  background: rgba(201, 169, 110, 0.15);
+  background: rgba(58, 140, 194, 0.15);
   border: 1px solid var(--color-accent);
   border-radius: 100px;
   padding: 0.6rem 1.5rem;
@@ -3249,7 +3249,7 @@ img {
 .stop-filter-btn.active {
   border-color: var(--color-accent);
   color: var(--color-accent);
-  background: rgba(201, 169, 110, 0.08);
+  background: rgba(58, 140, 194, 0.08);
 }
 
 .stops-grid {
@@ -3377,7 +3377,7 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  background: rgba(201, 169, 110, 0.12);
+  background: rgba(58, 140, 194, 0.12);
   color: var(--color-accent);
 }
 
