@@ -17,7 +17,6 @@ title: "Carol Musyoka"
     <div class="hero-slide-bg" style="background-image: url('{{ resolved_img }}')"></div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-date">{{ post.date | date: "%d %B %Y" }}</p>
       <h1 class="hero-title">{{ post.title }}</h1>
       <p class="hero-excerpt">{{ post.excerpt | strip_html | truncate: 160 }}</p>
       <a href="{{ post.url | relative_url }}" class="hero-cta">
@@ -845,6 +844,11 @@ title: "Carol Musyoka"
             <span>Northern frontier, wide open skies</span>
           </a>
         </li>
+        <li>
+          <a href="#">
+            <strong>Nairobi → Nakuru → Kericho → Kisumu → Kakamega</strong>
+            <span>Through the Rift Valley, tea plantations in Kericho and hilly terrain of the western side of Kenya</span>
+          </a>
       </ul>
     </div>
 
