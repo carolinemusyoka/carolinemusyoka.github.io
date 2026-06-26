@@ -3,11 +3,12 @@ layout: default
 body_class: city-guide-page
 ---
 
-{% comment %} Resolve hero image {% endcomment %}
-{% if page.image_cdn and site.imagekit_url %}
+{% comment %} Resolve hero image: page.image wins if present, else build from page.image_cdn {% endcomment %}
+{% assign hero_img = nil %}
+{% if page.image %}
+{% assign hero_img = page.image %}
+{% elsif page.image_cdn and site.imagekit_url %}
 {% assign hero_img = site.imagekit_url | append: "/tr:w-1600,f-auto,q-80/" | append: page.image_cdn %}
-{% elsif page.image %}
-{% assign hero_img = page.image | relative_url %}
 {% endif %}
 
 <article class="city-guide-article">
@@ -64,29 +65,74 @@ body_class: city-guide-page
 
   <!-- Timeline -->
   <div class="guide-timeline">
+    {% comment %}
+    Each entry: the page collection to iterate, the section title,
+    the displayed time range, and the icon variant to render.
+    This is the single source of truth for Morning/Midday/Afternoon/Evening
+    so the card markup below only has to exist once.
+    {% endcomment %}
+    {% assign timeline_sections = "morning,midday,afternoon,evening" | split: "," %}
 
-    {% comment %} ── Morning ── {% endcomment %}
-    {% if page.morning.size > 0 %}
+    {% for section_key in timeline_sections %}
+    {% assign items = nil %}
+    {% if section_key == "morning" %}
+    {% assign items = page.morning %}
+    {% assign section_title = "Morning" %}
+    {% assign section_range = "7:00 AM – 12:00 PM" %}
+    {% elsif section_key == "midday" %}
+    {% assign items = page.midday %}
+    {% assign section_title = "Midday" %}
+    {% assign section_range = "12:00 PM – 3:00 PM" %}
+    {% elsif section_key == "afternoon" %}
+    {% assign items = page.afternoon %}
+    {% assign section_title = "Afternoon" %}
+    {% assign section_range = "3:00 PM – 6:00 PM" %}
+    {% elsif section_key == "evening" %}
+    {% assign items = page.evening %}
+    {% assign section_title = "Evening" %}
+    {% assign section_range = "6:00 PM onwards" %}
+    {% endif %}
+
+    {% if items.size > 0 %}
     <section class="guide-time-block">
       <div class="time-block-header">
         <div class="time-block-icon">
+          {% if section_key == "morning" %}
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
             <circle cx="12" cy="12" r="5" />
             <path
               d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
           </svg>
+          {% elsif section_key == "midday" %}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="5" />
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2" />
+          </svg>
+          {% elsif section_key == "afternoon" %}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M17 18a5 5 0 00-10 0" />
+            <line x1="12" y1="9" x2="12" y2="2" />
+            <line x1="4.22" y1="10.22" x2="5.64" y2="11.64" />
+            <line x1="1" y1="18" x2="3" y2="18" />
+            <line x1="21" y1="18" x2="23" y2="18" />
+            <line x1="18.36" y1="11.64" x2="19.78" y2="10.22" />
+          </svg>
+          {% elsif section_key == "evening" %}
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+          </svg>
+          {% endif %}
         </div>
         <div>
-          <h2 class="time-block-title">Morning</h2>
-          <span class="time-block-range">7:00 AM – 12:00 PM</span>
+          <h2 class="time-block-title">{{ section_title }}</h2>
+          <span class="time-block-range">{{ section_range }}</span>
         </div>
       </div>
       <div class="time-block-activities">
-        {% for item in page.morning %}
+        {% for item in items %}
         <div class="city-activity-card">
 
           {% assign image_src = nil %}
-
           {% if item.image %}
           {% assign image_src = item.image %}
           {% elsif item.image_cdn %}
@@ -103,236 +149,17 @@ body_class: city-guide-page
             <span class="activity-time">{{ item.time }}</span>
             <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
             <p class="activity-desc">{{ item.description }}</p>
-
             {% if item.type %}
-            <span class="activity-type activity-type--{{ item.type }}">
-              {{ item.type | capitalize }}
-            </span>
+            <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
             {% endif %}
           </div>
 
         </div>
-        {% if item.image_cdn %}
-        <div class="activity-image">
-          <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}"
-            alt="{{ item.name | default: item.activity }}" loading="lazy">
-        </div>
-        {% endif %}
-        <div class="activity-content">
-          <span class="activity-time">{{ item.time }}</span>
-          <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-          <p class="activity-desc">{{ item.description }}</p>
-          {% if item.type %}
-          <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
-          {% endif %}
-        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
-  </div>
-  </section>
-  {% endif %}
-
-  {% comment %} ── Midday ── {% endcomment %}
-  {% if page.midday.size > 0 %}
-  <section class="guide-time-block">
-    <div class="time-block-header">
-      <div class="time-block-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <circle cx="12" cy="12" r="5" />
-          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2" />
-        </svg>
-      </div>
-      <div>
-        <h2 class="time-block-title">Midday</h2>
-        <span class="time-block-range">12:00 PM – 3:00 PM</span>
-      </div>
-    </div>
-    <div class="time-block-activities">
-      {% for item in page.midday %}
-      <div class="city-activity-card">
-
-        {% assign image_src = nil %}
-
-        {% if item.image %}
-        {% assign image_src = item.image %}
-        {% elsif item.image_cdn %}
-        {% assign image_src = site.imagekit_url | append: "/tr:w-600,f-auto,q-80/" | append: item.image_cdn %}
-        {% endif %}
-
-        {% if image_src %}
-        <div class="activity-image">
-          <img src="{{ image_src }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
-        </div>
-        {% endif %}
-
-        <div class="activity-content">
-          <span class="activity-time">{{ item.time }}</span>
-          <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-          <p class="activity-desc">{{ item.description }}</p>
-
-          {% if item.type %}
-          <span class="activity-type activity-type--{{ item.type }}">
-            {{ item.type | capitalize }}
-          </span>
-          {% endif %}
-        </div>
-
-      </div>
-      {% if item.image_cdn %}
-      <div class="activity-image">
-        <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}"
-          alt="{{ item.name | default: item.activity }}" loading="lazy">
-      </div>
-      {% endif %}
-      <div class="activity-content">
-        <span class="activity-time">{{ item.time }}</span>
-        <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-        <p class="activity-desc">{{ item.description }}</p>
-        {% if item.type %}
-        <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
-        {% endif %}
-      </div>
-    </div>
+    </section>
+    {% endif %}
     {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
-  {% comment %} ── Afternoon ── {% endcomment %}
-  {% if page.afternoon.size > 0 %}
-  <section class="guide-time-block">
-    <div class="time-block-header">
-      <div class="time-block-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M17 18a5 5 0 00-10 0" />
-          <line x1="12" y1="9" x2="12" y2="2" />
-          <line x1="4.22" y1="10.22" x2="5.64" y2="11.64" />
-          <line x1="1" y1="18" x2="3" y2="18" />
-          <line x1="21" y1="18" x2="23" y2="18" />
-          <line x1="18.36" y1="11.64" x2="19.78" y2="10.22" />
-        </svg>
-      </div>
-      <div>
-        <h2 class="time-block-title">Afternoon</h2>
-        <span class="time-block-range">3:00 PM – 6:00 PM</span>
-      </div>
-    </div>
-    <div class="time-block-activities">
-      {% for item in page.afternoon %}
-      <div class="city-activity-card">
-
-        {% assign image_src = nil %}
-
-        {% if item.image %}
-        {% assign image_src = item.image %}
-        {% elsif item.image_cdn %}
-        {% assign image_src = site.imagekit_url | append: "/tr:w-600,f-auto,q-80/" | append: item.image_cdn %}
-        {% endif %}
-
-        {% if image_src %}
-        <div class="activity-image">
-          <img src="{{ image_src }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
-        </div>
-        {% endif %}
-
-        <div class="activity-content">
-          <span class="activity-time">{{ item.time }}</span>
-          <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-          <p class="activity-desc">{{ item.description }}</p>
-
-          {% if item.type %}
-          <span class="activity-type activity-type--{{ item.type }}">
-            {{ item.type | capitalize }}
-          </span>
-          {% endif %}
-        </div>
-
-      </div>
-      {% if item.image_cdn %}
-      <div class="activity-image">
-        <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}"
-          alt="{{ item.name | default: item.activity }}" loading="lazy">
-      </div>
-      {% endif %}
-      <div class="activity-content">
-        <span class="activity-time">{{ item.time }}</span>
-        <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-        <p class="activity-desc">{{ item.description }}</p>
-        {% if item.type %}
-        <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
-  {% comment %} ── Evening ── {% endcomment %}
-  {% if page.evening.size > 0 %}
-  <section class="guide-time-block">
-    <div class="time-block-header">
-      <div class="time-block-icon">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
-        </svg>
-      </div>
-      <div>
-        <h2 class="time-block-title">Evening</h2>
-        <span class="time-block-range">6:00 PM onwards</span>
-      </div>
-    </div>
-    <div class="time-block-activities">
-      {% for item in page.evening %}
-      <div class="city-activity-card">
-
-        {% assign image_src = nil %}
-
-        {% if item.image %}
-        {% assign image_src = item.image %}
-        {% elsif item.image_cdn %}
-        {% assign image_src = site.imagekit_url | append: "/tr:w-600,f-auto,q-80/" | append: item.image_cdn %}
-        {% endif %}
-
-        {% if image_src %}
-        <div class="activity-image">
-          <img src="{{ image_src }}" alt="{{ item.name | default: item.activity }}" loading="lazy">
-        </div>
-        {% endif %}
-
-        <div class="activity-content">
-          <span class="activity-time">{{ item.time }}</span>
-          <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-          <p class="activity-desc">{{ item.description }}</p>
-
-          {% if item.type %}
-          <span class="activity-type activity-type--{{ item.type }}">
-            {{ item.type | capitalize }}
-          </span>
-          {% endif %}
-        </div>
-
-      </div>
-      {% if item.image_cdn %}
-      <div class="activity-image">
-        <img src="{{ site.imagekit_url }}/tr:w-600,f-auto,q-80/{{ item.image_cdn }}"
-          alt="{{ item.name | default: item.activity }}" loading="lazy">
-      </div>
-      {% endif %}
-      <div class="activity-content">
-        <span class="activity-time">{{ item.time }}</span>
-        <h3 class="activity-name">{{ item.name | default: item.activity }}</h3>
-        <p class="activity-desc">{{ item.description }}</p>
-        {% if item.type %}
-        <span class="activity-type activity-type--{{ item.type }}">{{ item.type | capitalize }}</span>
-        {% endif %}
-      </div>
-    </div>
-    {% endfor %}
-    </div>
-  </section>
-  {% endif %}
-
   </div>
 
   <!-- Where to Stay -->
