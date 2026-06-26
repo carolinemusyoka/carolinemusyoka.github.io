@@ -1,6 +1,5 @@
-
 ---
-title: "About"
+title: "A little about me"
 layout: page
 permalink: "/about/"
 subtitle: "Photographer, traveler, storyteller"
