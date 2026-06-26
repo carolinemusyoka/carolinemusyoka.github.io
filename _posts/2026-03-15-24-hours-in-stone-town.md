@@ -134,7 +134,7 @@ practical:
     - "Dress modestly when walking through the old town. Shoulders and knees covered is respectful and appreciated, especially near the mosques and the Old Fort. When visiting the Cathedral and the Slave Market, cover up if you're in shorts, although they do give you a leso, which is nice."
     - "Haggle at the night market and in Darajani Market. The first price quoted is often 2–3x what locals pay. Be friendly about it, a smile gets you further than a hard bargain and if you can speak swahili, even better."
     - "Carry cash,  most local spots don't accept cards. ATMs are available on Kenyatta Road if you run short. There is also an exchange bureau just close to Forodhani, The Peoples Bank of Zanzibar (between the Old Fort and the waterfront) tends to offer the best rates for small notes; the Post Office is better for larger notes"
-    - "The best photography light, personally, is before 8 AM and after 4 PM. Midday sun is okay too, just find your light.
+    - "The best photography light, personally, is before 8 AM and after 4 PM. Midday sun is okay too, just find your light."
     - "You'll see cats everywhere,  Stone Town is a bit of a cat town. They are especially in the park. If you are lucky enough, you'll get to see the guy who feeds them at the evening give them food."
 ---
 
